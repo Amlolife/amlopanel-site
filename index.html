@@ -3,273 +3,394 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amlo Panel - Revolusikan Workflow Photoshop Anda!</title>
-    <meta name="description" content="Stop buang waktu! Amlo Panel adalah CEP extension Photoshop canggih untuk otomatisasi, efisiensi, dan hasil desain profesional lebih cepat. Dapatkan harga spesial sekarang!">
+    <title>Amlo Panel - Percepat & Sempurnakan Workflow Photoshop Anda</title>
+    <meta name="description" content="Amlo Panel adalah ekstensi Photoshop (CEP) profesional yang dirancang untuk mengotomatiskan tugas, meningkatkan efisiensi, dan membuka potensi kreatif Anda.">
     <link rel="icon" href="/favicon.png"> <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> <style>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <style>
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #111827;
-            color: #E5E7EB;
+            background-color: #0D1117; /* GitHub Dark */
+            color: #C9D1D9; /* GitHub Dark Text */
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
         }
-        .hero-gradient { background: linear-gradient(135deg, #0A0F1A 0%, #1E293B 50%, #0F172A 100%); }
-        .feature-card, .testimonial-card {
-            background-color: #1F2937;
-            border: 1px solid #374151;
+        .bg-primary { background-color: #0D1117; }
+        .bg-secondary { background-color: #161B22; }
+        .border-accent { border-color: #2F81F7; } /* GitHub Blue */
+        .text-accent { color: #58A6FF; } /* GitHub Blue - Lighter */
+        .text-primary { color: #C9D1D9; }
+        .text-secondary { color: #8B949E; } /* GitHub Gray */
+        .btn-primary {
+            background-color: #238636; /* GitHub Green */
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+        }
+        .btn-primary:hover {
+            background-color: #2EA043;
+            box-shadow: 0 4px 10px rgba(46, 160, 67, 0.3);
+        }
+        .btn-secondary {
+            background-color: transparent;
+            color: #58A6FF;
+            border: 1px solid #30363D; /* GitHub Border */
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+        }
+        .btn-secondary:hover {
+            border-color: #58A6FF;
+            background-color: rgba(88, 166, 255, 0.1);
+        }
+        .card {
+            background-color: #161B22;
+            border: 1px solid #30363D; /* GitHub Border */
+            border-radius: 8px;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-        .feature-card:hover, .testimonial-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 15px 30px rgba(0, 255, 255, 0.15); /* Stronger Cyan Glow */
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(13, 17, 23, 0.4);
         }
-        .cta-button {
-            background: linear-gradient(90deg, #10B981, #059669); /* Emerald Green Gradient */
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.4);
-            color: #FFFFFF;
+        .section-title {
+            font-size: 2.25rem; /* 36px */
+            font-weight: 700;
+            color: #C9D1D9;
+            margin-bottom: 1rem;
         }
-        .cta-button:hover {
-            transform: scale(1.05) translateY(-2px);
-            box-shadow: 0 8px 25px rgba(16, 185, 129, 0.6);
-        }
-         .special-cta-button {
-            background: linear-gradient(90deg, #F59E0B, #D97706); /* Amber/Orange Gradient */
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 4px 15px rgba(245, 158, 11, 0.4);
-            color: #FFFFFF;
-        }
-        .special-cta-button:hover {
-            transform: scale(1.05) translateY(-2px);
-            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.6);
-        }
-        .secondary-cta-button {
-            background-color: transparent;
-            border: 2px solid #0EA5E9;
-            color: #0EA5E9;
-            transition: background-color 0.3s ease, color 0.3s ease;
-        }
-        .secondary-cta-button:hover { background-color: #0EA5E9; color: #FFFFFF; }
-        .section-title { text-shadow: 0 0 10px rgba(14, 165, 233, 0.3); }
-        .futuristic-hr { height: 2px; background: linear-gradient(90deg, transparent, #0EA5E9, transparent); border: none; margin: 3rem auto; width: 60%; }
-        ::-webkit-scrollbar { width: 8px; }
-        ::-webkit-scrollbar-track { background: #1F2937; }
-        ::-webkit-scrollbar-thumb { background: #0EA5E9; border-radius: 4px; }
-        ::-webkit-scrollbar-thumb:hover { background: #0284C7; }
-        .animate-fadeInUp { opacity: 0; transform: translateY(20px); animation: fadeInUp 0.8s ease-out forwards; }
-        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
-        .pricing-box {
-            border: 2px solid #F59E0B; /* Highlight pricing box */
-            box-shadow: 0 10px 30px rgba(245, 158, 11, 0.2);
-            transform: scale(1.02); /* Make it slightly bigger */
-        }
-        .guarantee-box {
-            background-color: #111827;
-            border: 1px dashed #4B5563;
-            padding: 1rem;
-            margin-top: 1.5rem;
-            border-radius: 8px;
+        .section-subtitle {
+            font-size: 1.125rem; /* 18px */
+            color: #8B949E;
+            max-width: 600px;
+            margin: 0 auto 3rem auto;
             text-align: center;
-            color: #9CA3AF;
         }
-        .testimonial-card { padding: 1.5rem; border-left: 5px solid #0EA5E9; }
-        .testimonial-quote { font-style: italic; color: #D1D5DB; }
-        .testimonial-author { font-weight: 700; color: #0EA5E9; margin-top: 1rem; }
+        .nav-link {
+             color: #C9D1D9;
+             transition: color 0.2s ease;
+        }
+        .nav-link:hover {
+            color: #58A6FF;
+        }
+        .testimonial-card {
+            background-color: #161B22;
+            border: 1px solid #30363D;
+            border-left: 4px solid #238636; /* Green Accent */
+            padding: 1.5rem;
+            border-radius: 8px;
+        }
+         .faq-item {
+            background-color: #161B22;
+            border: 1px solid #30363D;
+            border-radius: 6px;
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        .faq-question {
+            padding: 1rem 1.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #C9D1D9;
+        }
+         .faq-answer {
+            padding: 0 1.5rem 1.5rem 1.5rem;
+            color: #8B949E;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        .faq-item.open .faq-answer { max-height: 300px; } /* Adjust max-height as needed */
+        .faq-icon { transition: transform 0.3s ease; }
+        .faq-item.open .faq-icon { transform: rotate(180deg); }
+        .hero-image-placeholder {
+            background-color: #161B22;
+            border: 1px dashed #30363D;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            min-height: 400px; /* Adjust as needed */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0D1117; }
+        ::-webkit-scrollbar-thumb { background: #30363D; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #58A6FF; }
     </style>
 </head>
-<body class="antialiased">
+<body class="bg-primary text-primary">
 
-    <nav class="bg-gray-900/80 backdrop-blur-md sticky top-0 z-50 shadow-lg">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <nav class="bg-primary/80 backdrop-blur-md sticky top-0 z-50 border-b border-[#30363D]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-20">
                 <div class="flex items-center">
-                    <a href="#" class="text-3xl font-bold tracking-tighter" style="color: #0EA5E9;">
-                        Amlo<span class="text-gray-300">Panel</span>
+                    <a href="#" class="text-3xl font-bold tracking-tighter text-accent">
+                        Amlo<span class="text-primary">Panel</span>
                     </a>
                 </div>
                 <div class="hidden md:block">
-                    <div class="ml-10 flex items-baseline space-x-4">
-                        <a href="#fitur" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium">Fitur Unggulan</a>
-                        <a href="#testimoni" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium">Kata Mereka</a>
-                        <a href="#demo" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium">Demo</a>
-                        <a href="#harga" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium">Harga Spesial</a>
-                        <a href="mailto:amlolife.contact@gmail.com" class="text-gray-300 hover:text-sky-400 px-3 py-2 rounded-md text-sm font-medium">Kontak</a>
+                    <div class="ml-10 flex items-baseline space-x-6">
+                        <a href="#fitur" class="nav-link text-sm font-medium">Fitur</a>
+                        <a href="#testimoni" class="nav-link text-sm font-medium">Testimoni</a>
+                        <a href="#harga" class="nav-link text-sm font-medium">Harga</a>
+                        <a href="#faq" class="nav-link text-sm font-medium">FAQ</a>
+                        <a href="mailto:amlolife.contact@gmail.com" class="nav-link text-sm font-medium">Kontak</a>
                     </div>
                 </div>
-                 <div class="md:hidden">
-                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-sky-500" aria-controls="mobile-menu" aria-expanded="false">
-                        <span class="sr-only">Buka menu utama</span>
-                        <svg class="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
-                        <svg class="hidden h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
+                <div class="hidden md:block">
+                     <a href="#harga" class="btn-primary text-sm">Dapatkan Panel</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-secondary hover:text-primary hover:bg-secondary focus:outline-none">
+                        <span class="sr-only">Menu</span>
+                        <svg class="block h-6 w-6" id="menu-open-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" /></svg>
+                        <svg class="hidden h-6 w-6" id="menu-close-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" /></svg>
                     </button>
                 </div>
             </div>
         </div>
         <div class="md:hidden hidden" id="mobile-menu">
-            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
-                <a href="#fitur" class="text-gray-300 hover:bg-gray-700 hover:text-sky-400 block px-3 py-2 rounded-md text-base font-medium">Fitur Unggulan</a>
-                <a href="#testimoni" class="text-gray-300 hover:bg-gray-700 hover:text-sky-400 block px-3 py-2 rounded-md text-base font-medium">Kata Mereka</a>
-                <a href="#demo" class="text-gray-300 hover:bg-gray-700 hover:text-sky-400 block px-3 py-2 rounded-md text-base font-medium">Demo</a>
-                <a href="#harga" class="text-gray-300 hover:bg-gray-700 hover:text-sky-400 block px-3 py-2 rounded-md text-base font-medium">Harga Spesial</a>
-                <a href="mailto:amlolife.contact@gmail.com" class="text-gray-300 hover:bg-gray-700 hover:text-sky-400 block px-3 py-2 rounded-md text-base font-medium">Kontak</a>
+            <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3 border-t border-[#30363D]">
+                <a href="#fitur" class="nav-link block px-3 py-2 rounded-md text-base font-medium">Fitur</a>
+                <a href="#testimoni" class="nav-link block px-3 py-2 rounded-md text-base font-medium">Testimoni</a>
+                <a href="#harga" class="nav-link block px-3 py-2 rounded-md text-base font-medium">Harga</a>
+                <a href="#faq" class="nav-link block px-3 py-2 rounded-md text-base font-medium">FAQ</a>
+                <a href="mailto:amlolife.contact@gmail.com" class="nav-link block px-3 py-2 rounded-md text-base font-medium">Kontak</a>
+                <a href="#harga" class="btn-primary block px-3 py-2 rounded-md text-base font-medium text-center mt-2">Dapatkan Panel</a>
             </div>
         </div>
     </nav>
 
-    <header class="hero-gradient py-20 md:py-32">
-        <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight animate-fadeInUp">
-                <span class="block text-sky-400">Bebaskan Kekuatan Photoshop Anda.</span>
-                <span class="block text-gray-200">Desain <span class="text-emerald-400">Lebih Cepat</span>, Hasil <span class="text-emerald-400">Spektakuler</span>.</span>
-            </h1>
-            <p class="mt-6 max-w-2xl mx-auto text-lg sm:text-xl text-gray-400 animate-fadeInUp" style="animation-delay: 0.2s;">
-                Lelah dengan tugas repetitif? Habiskan waktu berjam-jam untuk detail kecil? <strong class="text-white">Amlo Panel</strong> adalah <strong class="text-sky-300">JAWABANNYA</strong>. CEP Extension revolusioner untuk <strong class="text-white">mengotomatiskan</strong> & <strong class="text-white">mempercepat</strong> alur kerja desain Anda.
-            </p>
-            <div class="mt-10 flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-6 animate-fadeInUp" style="animation-delay: 0.4s;">
-                <a href="#harga" class="cta-button text-white font-bold py-4 px-10 rounded-full text-xl shadow-lg w-full sm:w-auto inline-flex items-center justify-center">
-                    <i class="fas fa-bolt mr-3"></i> Ya, Saya Mau Desain Lebih Cepat!
-                </a>
-                <a href="#fitur" class="secondary-cta-button font-semibold py-4 px-10 rounded-full text-lg w-full sm:w-auto">
-                    Pelajari Fiturnya
-                </a>
+    <header class="bg-primary pt-24 pb-16 md:pt-32 md:pb-24">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-2 gap-16 items-center">
+                <div class="text-center md:text-left">
+                    <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold tracking-tight">
+                        <span class="block text-primary">Kerja <span class="text-accent">Lebih Cerdas</span>,</span>
+                        <span class="block text-primary">Bukan Lebih Keras di Photoshop.</span>
+                    </h1>
+                    <p class="mt-6 max-w-lg mx-auto md:mx-0 text-lg sm:text-xl text-secondary">
+                        Amlo Panel mengintegrasikan alat-alat canggih langsung ke Photoshop, mengotomatiskan tugas kompleks dan memberikan Anda lebih banyak waktu untuk <strong class="text-primary">berkreasi</strong>.
+                    </p>
+                    <div class="mt-10 flex flex-col sm:flex-row justify-center md:justify-start items-center space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="#harga" class="btn-primary w-full sm:w-auto flex items-center justify-center">
+                           <ion-icon name="sparkles-outline" class="mr-2"></ion-icon> Tingkatkan Workflow Saya
+                        </a>
+                        <a href="#fitur" class="btn-secondary w-full sm:w-auto">
+                            Lihat Cara Kerjanya
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image-placeholder">
+                    <span class="text-secondary text-lg text-center p-8">(Placeholder: Screenshot / Mockup Profesional Amlo Panel di Sini)</span>
+                    </div>
             </div>
         </div>
     </header>
 
-    <main class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+    <main class="bg-primary">
 
-        <section id="fitur" class="py-16">
-            <h2 class="section-title text-3xl sm:text-4xl font-bold text-center mb-16 animate-fadeInUp">Bukan Sekadar Panel Biasa - Ini <span class="text-sky-400">Game Changer</span> Anda:</h2>
-            <div class="grid md:grid-cols-3 gap-10"> <div class="feature-card p-8 rounded-xl shadow-2xl animate-fadeInUp" style="animation-delay: 0.1s;">
-                    <div class="flex items-center justify-center h-16 w-16 rounded-full bg-sky-500 text-white mb-6 shadow-md"><i class="fas fa-fighter-jet text-3xl"></i></div>
-                    <h3 class="text-xl font-semibold mb-3 text-gray-100">Kecepatan Kilat</h3>
-                    <p class="text-gray-400">"Bayangkan... pekerjaan 1 jam <strong class="text-white">selesai dalam 5 menit</strong>." Otomatiskan tugas & percepat workflow tanpa ampun.</p>
-                </div>
-                <div class="feature-card p-8 rounded-xl shadow-2xl animate-fadeInUp" style="animation-delay: 0.3s;">
-                    <div class="flex items-center justify-center h-16 w-16 rounded-full bg-sky-500 text-white mb-6 shadow-md"><i class="fas fa-magic-wand-sparkles text-3xl"></i></div>
-                    <h3 class="text-xl font-semibold mb-3 text-gray-100">Antarmuka Intuitif</h3>
-                    <p class="text-gray-400">"Tanpa pusing! <strong class="text-white">Langsung pakai, langsung jago</strong>." Mudah dipelajari, powerful untuk master.</p>
-                </div>
-                <div class="feature-card p-8 rounded-xl shadow-2xl animate-fadeInUp" style="animation-delay: 0.5s;">
-                    <div class="flex items-center justify-center h-16 w-16 rounded-full bg-sky-500 text-white mb-6 shadow-md"><i class="fas fa-tools text-3xl"></i></div>
-                    <h3 class="text-xl font-semibold mb-3 text-gray-100">Toolkit Canggih</h3>
-                    <p class="text-gray-400">"Wujudkan ide gila jadi nyata." Alat & preset <strong class="text-white">eksklusif</strong> untuk hasil profesional yang memukau.</p>
-                </div>
-            </div>
-        </section>
-
-        <hr class="futuristic-hr animate-fadeInUp">
-
-        <section id="testimoni" class="py-16">
-            <h2 class="section-title text-3xl sm:text-4xl font-bold text-center mb-16 animate-fadeInUp">Jangan Percaya Kami, <span class="text-sky-400">Dengar Kata Mereka!</span></h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="testimonial-card rounded-xl shadow-2xl animate-fadeInUp" style="animation-delay: 0.1s;">
-                    <p class="testimonial-quote">"Amlo Panel benar-benar mengubah cara saya kerja. Waktu editing berkurang drastis, klien makin puas!"</p>
-                    <p class="testimonial-author">- Budi Santoso, Freelance Graphic Designer</p>
-                </div>
-                <div class="testimonial-card rounded-xl shadow-2xl animate-fadeInUp" style="animation-delay: 0.3s;">
-                    <p class="testimonial-quote">"Awalnya ragu, tapi setelah coba... GILA! Fitur-fiturnya ngebantu banget buat proyek-proyek agensi kami. Wajib punya!"</p>
-                    <p class="testimonial-author">- Citra Lestari, Art Director</p>
-                </div>
-                 <div class="testimonial-card rounded-xl shadow-2xl animate-fadeInUp" style="animation-delay: 0.5s;">
-                    <p class="testimonial-quote">"Sebagai fotografer, retouching jadi jauh lebih cepat dan hasilnya konsisten. Amlo Panel ini investasi terbaik tahun ini."</p>
-                    <p class="testimonial-author">- Rian Hidayat, Wedding Photographer</p>
-                </div>
-            </div>
-        </section>
-
-        <hr class="futuristic-hr animate-fadeInUp">
-
-        <section id="demo" class="py-16">
-            <h2 class="section-title text-3xl sm:text-4xl font-bold text-center mb-12 animate-fadeInUp">Lihat Keajaibannya: Dari <span class="text-red-500">Lambat</span> Jadi <span class="text-emerald-400">Ngebut!</span></h2>
-            <div class="aspect-w-16 aspect-h-9 rounded-xl overflow-hidden shadow-2xl border-2 border-sky-500/50 animate-fadeInUp" style="animation-delay: 0.2s;">
-                <img src="https://placehold.co/1280x720/1f2937/0ea5e9?text=Tonton+Demo+Amlo+Panel+Disini!" alt="Demo Video Amlo Panel" class="w-full h-full object-cover">
-            </div>
-            <p class="text-center mt-6 text-gray-400 animate-fadeInUp" style="animation-delay: 0.4s;">
-                Saksikan sendiri bagaimana Amlo Panel bisa <strong class="text-white">mentransformasi</strong> proses kreatif Anda. (Video demo segera hadir!)
-            </p>
-        </section>
-
-        <hr class="futuristic-hr animate-fadeInUp">
-
-        <section id="harga" class="py-16">
-            <div class="bg-gray-800/50 rounded-xl p-8 md:p-12 shadow-2xl border border-gray-700 animate-fadeInUp">
-                <h2 class="section-title text-3xl sm:text-4xl font-bold text-center mb-4">Kesempatan Emas: Harga Spesial <span class="text-amber-400">Hanya untuk 20 Orang Pertama!</span></h2>
-                <p class="text-xl text-center text-gray-400 mb-10 max-w-xl mx-auto">
-                   Ini bukan sekadar tool, ini <strong class="text-white">investasi</strong> untuk karir desain Anda. Dapatkan <strong class="text-white">semua keunggulannya</strong> dengan harga <strong class="text-amber-400">paling murah</strong>.
-                </p>
-                <div class="max-w-md mx-auto bg-gray-700/70 p-8 rounded-lg shadow-xl text-center pricing-box">
-                    <div class="bg-amber-500 text-white font-bold py-2 px-6 rounded-t-lg -mt-8 mx-auto inline-block">HARGA SPESIAL LAUNCHING</div>
-                    <h3 class="text-2xl font-semibold text-sky-400 mb-2 mt-4">Amlo Panel Pro</h3>
-                    <p class="text-gray-400 line-through text-2xl">Rp 450.000</p>
-                    <p class="text-6xl font-extrabold text-white mb-4">Rp 149.000</p>
-                    <p class="text-lg font-normal text-amber-400 mb-6">/ Sekali Bayar, Seumur Hidup!</p>
-
-                    <ul class="text-gray-300 space-y-3 mb-8 text-left text-lg">
-                        <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-3"></i>Semua Fitur Canggih Saat Ini</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-3"></i>Update Fitur Masa Depan (<strong class="text-white ml-1">Gratis!</strong>)</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-3"></i>Dukungan Teknis Prioritas</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-3"></i>Kompatibel Windows & macOS</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-emerald-400 mr-3"></i>Akses Grup Komunitas Eksklusif</li>
-                    </ul>
-
-                    <a href="https://amlo-life.myr.id/pl/amlo-panel" target="_blank" rel="noopener noreferrer" class="special-cta-button text-white font-bold py-5 px-10 rounded-lg text-2xl w-full block shadow-xl hover:shadow-amber-500/50">
-                       <i class="fas fa-rocket mr-2"></i> Amankan Harga Spesial Sekarang!
-                    </a>
-                    <p class="text-xs text-gray-500 mt-4">Pembayaran aman via Mayar.id. <strong class="text-gray-400">Jangan sampai kehabisan!</strong></p>
-
-                    <div class="guarantee-box">
-                       <i class="fas fa-shield-alt text-xl mb-2 text-emerald-500"></i>
-                       <p class="text-sm"> <strong class="text-white">Garansi Kepuasan 100%</strong>: Tidak puas? Hubungi kami dalam 7 hari, uang Anda kembali tanpa ditanya!</p>
+        <section id="fitur" class="py-24 bg-secondary">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title text-center">Dibangun untuk Profesional Kreatif</h2>
+                <p class="section-subtitle">Amlo Panel bukan hanya kumpulan *action*, ini adalah ekosistem produktivitas yang dirancang untuk mengatasi tantangan nyata dalam alur kerja desain modern.</p>
+                <div class="grid md:grid-cols-3 gap-8 mt-12">
+                    <div class="card p-6">
+                        <div class="text-accent mb-4"><ion-icon name="flash-outline" class="text-4xl"></ion-icon></div>
+                        <h3 class="text-xl font-semibold mb-3 text-primary">Otomatisasi Cerdas</h3>
+                        <p class="text-secondary">Kurangi klik berulang dan proses manual. Biarkan Amlo Panel menangani tugas-tugas seperti *batch processing*, *resizing*, dan *layer management* dengan presisi.</p>
+                    </div>
+                    <div class="card p-6">
+                        <div class="text-accent mb-4"><ion-icon name="color-wand-outline" class="text-4xl"></ion-icon></div>
+                        <h3 class="text-xl font-semibold mb-3 text-primary">Perpustakaan Aset Terpadu</h3>
+                        <p class="text-secondary">Akses *preset*, *template*, *brush*, dan elemen desain favorit Anda langsung dari panel, tanpa perlu mencari di folder tak berujung.</p>
+                    </div>
+                    <div class="card p-6">
+                         <div class="text-accent mb-4"><ion-icon name="construct-outline" class="text-4xl"></ion-icon></div>
+                        <h3 class="text-xl font-semibold mb-3 text-primary">Alat Bantu Desain Lanjutan</h3>
+                        <p class="text-secondary">Manfaatkan fitur-fitur eksklusif seperti *grid generator*, *color palette manager*, dan *font previewer* yang memperluas kemampuan Photoshop.</p>
                     </div>
                 </div>
             </div>
         </section>
+
+        <section id="testimoni" class="py-24 bg-primary">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                 <h2 class="section-title text-center">Dipercaya oleh Desainer & Fotografer</h2>
+                 <p class="section-subtitle">Lihat bagaimana Amlo Panel membantu para profesional seperti Anda mencapai hasil yang lebih baik, lebih cepat.</p>
+                 <div class="grid md:grid-cols-2 gap-8 mt-12">
+                    <div class="testimonial-card">
+                        <div class="flex items-center mb-4">
+                            <img src="https://placehold.co/60x60/161B22/C9D1D9?text=BD" alt="Budi" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="font-semibold text-primary">Budi Santoso</p>
+                                <p class="text-sm text-secondary">Freelance Graphic Designer</p>
+                            </div>
+                        </div>
+                        <p class="text-secondary italic">"Amlo Panel benar-benar mengubah cara saya kerja. Waktu editing berkurang drastis, klien makin puas!"</p>
+                    </div>
+                    <div class="testimonial-card">
+                         <div class="flex items-center mb-4">
+                            <img src="https://placehold.co/60x60/161B22/C9D1D9?text=CL" alt="Citra" class="w-12 h-12 rounded-full mr-4">
+                            <div>
+                                <p class="font-semibold text-primary">Citra Lestari</p>
+                                <p class="text-sm text-secondary">Art Director, Creative Agency</p>
+                            </div>
+                        </div>
+                        <p class="text-secondary italic">"Awalnya ragu, tapi setelah coba... powerful! Fitur-fiturnya sangat membantu efisiensi tim kami. Highly recommended."</p>
+                    </div>
+                 </div>
+            </div>
+        </section>
+
+        <section id="harga" class="py-24 bg-secondary">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                 <h2 class="section-title">Investasi Cerdas untuk Produktivitas Anda</h2>
+                 <p class="section-subtitle">Dapatkan akses penuh ke Amlo Panel dengan penawaran spesial peluncuran. Satu kali pembayaran untuk keuntungan seumur hidup.</p>
+
+                 <div class="card p-8 md:p-12 max-w-lg mx-auto border-2 border-accent">
+                     <h3 class="text-xl font-semibold text-accent mb-2">AMLO PANEL PRO</h3>
+                     <p class="text-lg text-secondary mb-4">Lisensi Seumur Hidup (Lifetime)</p>
+                     <p class="text-5xl font-extrabold text-primary mb-2">Rp 149.000</p>
+                     <p class="text-secondary mb-8">(Harga Normal: Rp 450.000 - Anda Hemat 67%!) </p>
+
+                     <ul class="text-secondary space-y-3 mb-10 text-left">
+                         <li class="flex items-center"><ion-icon name="checkmark-circle-outline" class="text-green-500 mr-3 text-xl"></ion-icon>Akses Penuh Semua Fitur Saat Ini</li>
+                         <li class="flex items-center"><ion-icon name="checkmark-circle-outline" class="text-green-500 mr-3 text-xl"></ion-icon>Gratis Update & Fitur Baru Selamanya</li>
+                         <li class="flex items-center"><ion-icon name="checkmark-circle-outline" class="text-green-500 mr-3 text-xl"></ion-icon>Dukungan Premium</li>
+                         <li class="flex items-center"><ion-icon name="checkmark-circle-outline" class="text-green-500 mr-3 text-xl"></ion-icon>Kompatibel Windows & macOS</li>
+                          <li class="flex items-center"><ion-icon name="checkmark-circle-outline" class="text-green-500 mr-3 text-xl"></ion-icon>Akses Grup Komunitas</li>
+                     </ul>
+
+                     <a href="https://amlo-life.myr.id/pl/amlo-panel" target="_blank" rel="noopener noreferrer" class="btn-primary w-full text-lg py-4 flex items-center justify-center">
+                         <ion-icon name="key-outline" class="mr-2"></ion-icon> Dapatkan Lisensi Lifetime Sekarang
+                     </a>
+                     <p class="text-xs text-secondary mt-6">Pembayaran aman melalui Mayar.id. <br> <strong class="text-primary">Garansi 7 Hari Uang Kembali</strong> - Tanpa Risiko!</p>
+                 </div>
+            </div>
+        </section>
+
+        <section id="faq" class="py-24 bg-primary">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="section-title text-center">Pertanyaan yang Sering Diajukan</h2>
+                <p class="section-subtitle">Masih ada pertanyaan? Temukan jawabannya di sini atau hubungi kami.</p>
+
+                <div class="mt-12">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Bagaimana cara instalasi Amlo Panel?</span>
+                            <ion-icon name="chevron-down-outline" class="faq-icon"></ion-icon>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sangat mudah! Setelah pembelian, Anda akan menerima file ZXP dan panduan instalasi langkah-demi-langkah. Anda bisa menginstalnya menggunakan Adobe Creative Cloud Desktop atau ZXP Installer.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Apakah saya akan mendapatkan update?</span>
+                             <ion-icon name="chevron-down-outline" class="faq-icon"></ion-icon>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Tentu saja! Dengan lisensi lifetime, Anda berhak mendapatkan semua update fitur dan perbaikan bug di masa mendatang secara gratis.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Apakah kompatibel dengan Photoshop versi terbaru?</span>
+                            <ion-icon name="chevron-down-outline" class="faq-icon"></ion-icon>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Ya, Amlo Panel dirancang untuk bekerja dengan versi Adobe Photoshop terbaru (Creative Cloud). Kami akan terus memperbaruinya untuk memastikan kompatibilitas.</p>
+                        </div>
+                    </div>
+                     <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Bagaimana jika saya tidak puas?</span>
+                             <ion-icon name="chevron-down-outline" class="faq-icon"></ion-icon>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Kami menawarkan garansi 7 hari uang kembali. Jika Anda merasa Amlo Panel tidak sesuai dengan ekspektasi Anda, hubungi kami dalam 7 hari setelah pembelian untuk pengembalian dana penuh.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-    <footer class="bg-gray-900 border-t border-gray-700/50">
-        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-            <div class="md:flex md:items-center md:justify-between">
-                <div class="flex justify-center space-x-6 md:order-2">
-                    <a href="#" class="text-gray-400 hover:text-sky-400"><span class="sr-only">Twitter</span><svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.713v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg></a>
-                    </div>
-                <div class="mt-8 md:mt-0 md:order-1">
-                    <p class="text-center text-base text-gray-400">© <span id="currentYear"></span> Amlo Panel (amlo.life). Hak Cipta Dilindungi.</p>
-                    <p class="text-center text-xs text-gray-500 mt-1">Dibuat untuk memaksimalkan potensi Adobe Photoshop Anda.</p>
-                </div>
-            </div>
+    <footer class="bg-secondary border-t border-[#30363D]">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 text-center text-secondary text-sm">
+            <p>© <span id="currentYear"></span> Amlo Panel (amlo.life). Dirancang dengan <ion-icon name="heart" class="text-red-500"></ion-icon> untuk Komunitas Kreatif.</p>
+            <p><a href="mailto:amlolife.contact@gmail.com" class="hover:text-accent">Hubungi Dukungan</a></p>
         </div>
     </footer>
 
+
     <script>
+        // Set current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-        const mobileMenuOpenIcon = mobileMenuButton.querySelector('svg:first-child');
-        const mobileMenuCloseIcon = mobileMenuButton.querySelector('svg:last-child');
+        const openIcon = document.getElementById('menu-open-icon');
+        const closeIcon = document.getElementById('menu-close-icon');
+
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
-            mobileMenuOpenIcon.classList.toggle('hidden');
-            mobileMenuCloseIcon.classList.toggle('hidden');
+            openIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
         });
         document.querySelectorAll('#mobile-menu a').forEach(link => {
             link.addEventListener('click', () => {
-                mobileMenu.classList.add('hidden');
-                mobileMenuOpenIcon.classList.remove('hidden');
-                mobileMenuCloseIcon.classList.add('hidden');
+                 mobileMenu.classList.add('hidden');
+                 openIcon.classList.remove('hidden');
+                 closeIcon.classList.add('hidden');
             });
         });
-        document.getElementById('currentYear').textContent = new Date().getFullYear();
-        const animatedElements = document.querySelectorAll('.animate-fadeInUp');
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.animationDelay = entry.target.style.animationDelay || '0s';
-                    entry.target.classList.add('is-visible');
-                    observer.unobserve(entry.target);
+
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                faqItem.classList.toggle('open');
+
+                // Optional: Close other FAQs when one is opened
+                document.querySelectorAll('.faq-item').forEach(item => {
+                    if (item !== faqItem && item.classList.contains('open')) {
+                        item.classList.remove('open');
+                    }
+                });
+            });
+        });
+
+        // Smooth scrolling (optional)
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                // Only for internal links, exclude the mobile menu links
+                if(this.closest('#mobile-menu')) return;
+
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 }
             });
-        }, { threshold: 0.1 });
-        animatedElements.forEach(el => observer.observe(el));
+        });
     </script>
 
 </body>
