@@ -10,8 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-M3XXW7FDMS"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M3XXW7FDMS"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
@@ -132,7 +131,7 @@
                         <span class="block text-secondary">Berguna.</span>
                     </h1>
                      <p class="mt-6 max-w-lg mx-auto md:mx-0 text-lg sm:text-xl text-secondary">
-                        Amlo Panel adalah <strong class="text-primary">Plugin</strong> yang <strong class="text-primary">dibuat untuk efisiensi.</strong> Ngedit di Photoshop gak pernah semudah ini.<strong class="text-primary"> Made for Photographer and Retoucher</strong>.
+                         Amlo Panel adalah <strong class="text-primary">Plugin</strong> yang <strong class="text-primary">dibuat untuk efisiensi.</strong> Ngedit di Photoshop gak pernah semudah ini.<strong class="text-primary"> Made for Photographer and Retoucher</strong>.
                     </p>
                     <div class="mt-10 flex flex-col sm:flex-row justify-center md:justify-start items-center space-y-4 sm:space-y-0 sm:space-x-4">
                         <a href="#harga" class="btn-primary w-full sm:w-auto">
@@ -225,14 +224,15 @@
         </section>
         <section id="harga" class="py-24 bg-primary"> <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
                 <h2 class="section-title">Soft Launching Special!</h2>
-                <p id="pricing-subtitle" class="section-subtitle">Diskon 50% dari Rp 298.000 (hanya untuk 20 pembeli pertama!)</p>
+                <p id="pricing-subtitle" class="section-subtitle">Diskon 50% dari <span class="line-through text-red-500">Rp 298.000</span> (hanya untuk 20 pembeli pertama!)</p>
 
                 <div class="card p-8 md:p-12 max-w-lg mx-auto border-2 border-[var(--accent-color)] shadow-2xl shadow-[var(--accent-color)]/10">
                     <h3 class="text-xl font-semibold text-accent mb-2">AMLO PANEL (20 Orang Pertama)</h3>
                     <p class="text-lg text-secondary mb-8">Lisensi Seumur Hidup</p>
 
-                    <p class="text-6xl font-extrabold mb-6">
-                        <span class="text-price">Rp 99.000</span>
+                    <p class="text-6xl font-extrabold mb-6 flex items-baseline justify-center">
+                         <span class="text-3xl text-red-500 line-through mr-3">Rp 149.000</span>
+                         <span class="text-price">Rp 99.000</span>
                     </p>
 
                     <div id="countdown-container" class="mb-10">
@@ -348,7 +348,7 @@
                 countdownContainer.classList.add('hidden');
                 buyButton.classList.remove('hidden');
                 buyButtonDisabled.classList.add('hidden');
-                pricingSubtitle.textContent = "Penjualan Telah Dibuka! Download Amlo Panel Sekarang!";
+                pricingSubtitle.innerHTML = "Penjualan Telah Dibuka! Download Amlo Panel Sekarang!"; // Updated text
                 return; // Stop the function
             }
 
@@ -377,12 +377,12 @@
             anchor.addEventListener('click', function (e) {
                  // Prevent default only if it's not a mobile link (already handled)
                  if(!this.closest('#mobile-menu')) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if(targetElement) {
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
-                    }
+                     e.preventDefault();
+                     const targetId = this.getAttribute('href');
+                     const targetElement = document.querySelector(targetId);
+                     if(targetElement) {
+                         targetElement.scrollIntoView({ behavior: 'smooth' });
+                     }
                  }
             });
         });
