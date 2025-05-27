@@ -50,8 +50,33 @@
         .section-subtitle { font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 3rem auto; text-align: center; }
         .nav-link { color: #aaaaaa; transition: color 0.2s ease; font-weight: 500; }
         .nav-link:hover { color: var(--text-accent); }
-        .hero-image-placeholder { background-color: #141414; border: 1px dashed #2a2a2a; display: flex; align-items: center; justify-content: center; border-radius: 8px; min-height: 400px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); transition: border-color 0.3s ease; }
-        .hero-image-placeholder:hover { border-color: #555555; }
+        /* Updated placeholder styles */
+        .hero-interactive-placeholder {
+            background-color: #141414;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            min-height: 550px; /* Adjust height */
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            /* Using padding and transform to make it look embedded */
+            padding: 20px;
+            transform: scale(0.9);
+            transform-origin: center;
+            transition: transform 0.3s ease;
+        }
+        .hero-interactive-placeholder:hover {
+            transform: scale(0.92); /* Slight zoom on hover */
+        }
+         .hero-interactive-placeholder iframe {
+            border: none;
+            background-color: #0D0F12; /* Match panel bg */
+            border-radius: 10px; /* Match panel radius */
+            width: 320px; /* Panel Width */
+            height: 700px; /* Increased height to show more */
+        }
         .faq-item { background-color: #141414; border-bottom: 1px solid #2a2a2a; margin-bottom: 0; overflow: hidden; }
         .faq-question { padding: 1.5rem 1rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: #e0e0e0; }
         .faq-answer { padding: 0 1rem 1.5rem 1rem; color: #888888; max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
@@ -142,8 +167,13 @@
                         </a>
                     </div>
                 </div>
-               <div class="hero-image-placeholder">
-                    <img src="https://i.imgur.com/CK6Vp7h.png" alt="Amlo Panel UI Monochrome" class="w-1/2 h-auto object-cover rounded-lg opacity-80">
+               <div class="hero-interactive-placeholder">
+                    <iframe
+                        src="https://raw.githack.com/Amlolife/amlopanelindex/main/index.html"
+                        frameborder="0"
+                        scrolling="no"
+                        title="Amlo Panel Interactive Preview">
+                    </iframe>
                 </div>
             </div>
         </div>
@@ -271,7 +301,7 @@
                 <div class="mt-12 border-t border-line rounded-lg overflow-hidden">
                     <div class="faq-item"><div class="faq-question"><span>Bagaimana cara instalasi?</span><ion-icon name="chevron-down-outline" class="faq-icon text-2xl"></ion-icon></div><div class="faq-answer"><p>Sangat mudah! Anda hanya perlu download file installer .exe, jalankan sebagai administrator, lalu buka Photoshop. Cek bagian <a href="#tutorial" class="text-accent underline">Tutorial</a> untuk langkah detail.</p></div></div>
                     <div class="faq-item"><div class="faq-question"><span>Apakah ada biaya bulanan?</span><ion-icon name="chevron-down-outline" class="faq-icon text-2xl"></ion-icon></div><div class="faq-answer"><p>Tidak. Ini adalah pembelian satu kali. Anda mendapatkan lisensi seumur hidup, termasuk update gratis!</p></div></div>
-                    <div class="faq-item"><div class="faq-question"><span>Versi Photoshop mana yang didukung?</span><ion-icon name="chevron-down-outline" class="faq-icon text-2xl"></ion-icon></div><div class="faq-answer"><p>Amlo Panel kompatibel dengan minimal Adobe Photoshop CC 2021 keatas.</p></div></div>
+                    <div class="faq-item"><div class="faq-question"><span>Versi Photoshop mana yang didukung?</span><ion-icon name="chevron-down-outline" class="faq-icon text-2xl"></ion-icon></div><div class="faq-answer"><p>Amlo Panel kompatibel dengan minimal Adobe Photoshop CC 2021 keatas, baik untuk Windows maupun macOS.</p></div></div>
                     <div class="faq-item"><div class="faq-question"><span>Apakah Harus Online?</span><ion-icon name="chevron-down-outline" class="faq-icon text-2xl"></ion-icon></div><div class="faq-answer"><p>Fitur yang mengharuskan anda online hanyalah Pixabay Stock Photos Search, sisanya Amlo Panel bekerja secara Offline.</p></div></div>
                      <div class="faq-item"><div class="faq-question"><span>Apakah saya akan dapat update?</span><ion-icon name="chevron-down-outline" class="faq-icon text-2xl"></ion-icon></div><div class="faq-answer"><p>Tentu saja! Semua pembeli akan mendapatkan update fitur dan perbaikan bug secara gratis, seumur hidup.</p></div></div>
                 </div>
