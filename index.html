@@ -15,7 +15,6 @@
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
-
       gtag('config', 'G-M3XXW7FDMS');
     </script>
 
@@ -30,84 +29,264 @@
             --text-secondary: #888888;
             --text-accent: #ffffff;
         }
-        body { font-family: 'Inter', sans-serif; background-color: var(--bg-primary); color: var(--text-primary); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; overflow-x: hidden; }
-        body::before { content: ""; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); background-size: 250px 250px; opacity: 0.025; pointer-events: none; z-index: -1; will-change: opacity; }
-        .blur-blob-1, .blur-blob-2 { position: absolute; border-radius: 50%; filter: blur(80px); z-index: 0; pointer-events: none; }
-        .blur-blob-1 { top: 10%; right: -15%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(0, 201, 255, 0.05) 0%, rgba(0, 201, 255, 0) 70%); }
-        .blur-blob-2 { bottom: 5%; left: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(150, 150, 150, 0.06) 0%, rgba(150, 150, 150, 0) 65%); }
-        .btn-primary { background-color: var(--accent-color); color: #000000; padding: 0.75rem 1.5rem; border-radius: 6px; font-weight: 700; transition: all 0.2s ease-in-out; border: 1px solid var(--accent-color); box-shadow: 0 4px 15px rgba(0, 201, 255, 0.2); display: inline-flex; align-items: center; justify-content: center; }
-        .btn-primary:hover { background-color: var(--accent-color-dark); color: #000000; border-color: var(--accent-color-dark); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0, 201, 255, 0.3); }
-        .btn-primary.disabled { background-color: #555; color: #aaa; border-color: #555; box-shadow: none; cursor: not-allowed; }
-        .btn-primary.disabled:hover { transform: none; background-color: #555; }
-        .btn-primary ion-icon { color: #000000 !important; }
-        .btn-secondary { background-color: transparent; color: var(--accent-color); border: 1px solid var(--accent-color); padding: 0.75rem 1.5rem; border-radius: 6px; font-weight: 600; transition: all 0.2s ease-in-out; display: inline-flex; align-items: center; justify-content: center; }
-        .btn-secondary:hover { background-color: rgba(0, 201, 255, 0.1); color: var(--accent-color); box-shadow: 0 0 10px rgba(0, 201, 255, 0.1); }
-        .btn-secondary ion-icon { color: var(--accent-color) !important; }
-        .text-price { color: var(--accent-color); text-shadow: 0 0 10px rgba(0, 201, 255, 0.4); }
-        .card { background-color: rgba(20, 20, 20, 0.6); border: 1px solid var(--border-line); border-radius: 8px; transition: all 0.3s ease; backdrop-filter: blur(5px); }
-        .card:hover { transform: translateY(-5px); border-color: #555555; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
-        .section-title { font-size: 2.5rem; font-weight: 800; color: var(--text-accent); margin-bottom: 1rem; letter-spacing: -1px; }
-        .section-subtitle { font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 3rem auto; text-align: center; }
-        .nav-link { color: #aaaaaa; transition: color 0.2s ease; font-weight: 500; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            overflow-x: hidden;
+        }
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0; left: 0;
+            width: 100vw; height: 100vh;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+            background-size: 250px 250px;
+            opacity: 0.025;
+            pointer-events: none;
+            z-index: -1;
+            will-change: opacity;
+        }
+        .blur-blob-1, .blur-blob-2 {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            z-index: 0;
+            pointer-events: none;
+        }
+        .blur-blob-1 {
+            top: 10%; right: -15%;
+            width: 400px; height: 400px;
+            background: radial-gradient(circle, rgba(0, 201, 255, 0.05) 0%, rgba(0, 201, 255, 0) 70%);
+        }
+        .blur-blob-2 {
+            bottom: 5%; left: -10%;
+            width: 500px; height: 500px;
+            background: radial-gradient(circle, rgba(150, 150, 150, 0.06) 0%, rgba(150, 150, 150, 0) 65%);
+        }
+        .btn-primary {
+            background-color: var(--accent-color);
+            color: #000;
+            padding: .75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 700;
+            transition: all .2s ease-in-out;
+            border: 1px solid var(--accent-color);
+            box-shadow: 0 4px 15px rgba(0, 201, 255, .2);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .btn-primary:hover {
+            background-color: var(--accent-color-dark);
+            border-color: var(--accent-color-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 201, 255, .3);
+        }
+        .btn-primary.disabled {
+            background-color: #555;
+            color: #aaa;
+            border-color: #555;
+            box-shadow: none;
+            cursor: not-allowed;
+        }
+        .btn-secondary {
+            background: transparent;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+            padding: .75rem 1.5rem;
+            border-radius: 6px;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .2s ease-in-out;
+        }
+        .btn-secondary:hover {
+            background-color: rgba(0,201,255,.1);
+            box-shadow: 0 0 10px rgba(0,201,255,.1);
+        }
+        .text-price {
+            color: var(--accent-color);
+            text-shadow: 0 0 10px rgba(0,201,255,.4);
+        }
+        .card {
+            background-color: rgba(20,20,20,.6);
+            border: 1px solid var(--border-line);
+            border-radius: 8px;
+            transition: all .3s ease;
+            backdrop-filter: blur(5px);
+        }
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #555;
+            box-shadow: 0 10px 30px rgba(0,0,0,.5);
+        }
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--text-accent);
+            margin-bottom: 1rem;
+            letter-spacing: -1px;
+        }
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--text-secondary);
+            max-width: 600px;
+            margin: 0 auto 3rem;
+            text-align: center;
+        }
+        .nav-link {
+            color: #aaa;
+            font-weight: 500;
+            transition: color .2s ease;
+        }
         .nav-link:hover { color: var(--text-accent); }
-        /* Updated placeholder styles */
         .hero-interactive-placeholder {
-            background-color: #141414;
+            background: #141414;
             border: 1px solid #2a2a2a;
             border-radius: 8px;
-            min-height: 550px; /* Adjust height */
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-            overflow: hidden;
+            min-height: 550px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.3);
             display: flex;
             align-items: center;
             justify-content: center;
-            /* Using padding and transform to make it look embedded */
             padding: 20px;
             transform: scale(0.9);
-            transform-origin: center;
-            transition: transform 0.3s ease;
+            transition: transform .3s ease;
         }
-        .hero-interactive-placeholder:hover {
-            transform: scale(0.92); /* Slight zoom on hover */
-        }
-         .hero-interactive-placeholder iframe {
+        .hero-interactive-placeholder:hover { transform: scale(0.92); }
+        .hero-interactive-placeholder iframe {
             border: none;
-            background-color: #0D0F12; /* Match panel bg */
-            border-radius: 10px; /* Match panel radius */
-            width: 320px; /* Panel Width */
-            height: 700px; /* Increased height to show more */
+            background: #0D0F12;
+            border-radius: 10px;
+            width: 320px;
+            height: 700px;
         }
-        .faq-item { background-color: #141414; border-bottom: 1px solid #2a2a2a; margin-bottom: 0; overflow: hidden; }
-        .faq-question { padding: 1.5rem 1rem; cursor: pointer; display: flex; justify-content: space-between; align-items: center; font-weight: 600; color: #e0e0e0; }
-        .faq-answer { padding: 0 1rem 1.5rem 1rem; color: #888888; max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
+        .faq-item { background: #141414; border-bottom: 1px solid #2a2a2a; overflow: hidden; }
+        .faq-question {
+            padding: 1.5rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: #e0e0e0;
+            cursor: pointer;
+        }
+        .faq-answer {
+            padding: 0 1rem 1.5rem;
+            color: #888;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height .4s ease-out;
+        }
         .faq-item.open .faq-answer { max-height: 300px; }
-        .faq-icon { transition: transform 0.4s ease; color: #555555; }
+        .faq-icon { transition: transform .4s ease; color: #555; }
         .faq-item.open .faq-icon { transform: rotate(180deg); color: #e0e0e0; }
-        .navbar { background-color: rgba(10, 10, 10, 0.7); backdrop-filter: blur(12px); border-bottom: 1px solid #1a1a1a; }
-        ion-icon { color: #888888; transition: color 0.2s ease; }
+        .navbar {
+            background: rgba(10,10,10,.7);
+            backdrop-filter: blur(12px);
+            border-bottom: 1px solid #1a1a1a;
+        }
+        ion-icon { color: #888; transition: color .2s ease; }
         .card:hover ion-icon { color: var(--text-primary); }
         header, main, footer, nav { position: relative; z-index: 10; }
 
-        /* Timer Styles */
-        #countdown-timer .timer-value { font-size: 3rem; line-height: 1; font-weight: 800; color: var(--text-accent); background-color: var(--bg-secondary); padding: 1rem; border-radius: 6px; border: 1px solid var(--border-line); min-width: 80px; text-align: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
-        @media (min-width: 640px) { #countdown-timer .timer-value { font-size: 4rem; min-width: 110px; } }
-        #countdown-timer .timer-label { font-size: 0.75rem; color: var(--text-secondary); margin-top: 0.75rem; letter-spacing: 1px; text-transform: uppercase; }
+        /* Timer */
+        #countdown-timer .timer-value {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--text-accent);
+            background: var(--bg-secondary);
+            padding: 1rem;
+            border-radius: 6px;
+            border: 1px solid var(--border-line);
+            min-width: 80px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,.3);
+        }
+        @media (min-width:640px) {
+            #countdown-timer .timer-value { font-size:4rem; min-width:110px; }
+        }
+        .timer-label { font-size:.75rem; color:var(--text-secondary); margin-top:.75rem; text-transform:uppercase; letter-spacing:1px; }
 
-        /* Tutorial Styles */
-        .tutorial-step { background-color: var(--bg-secondary); border: 1px solid var(--border-line); border-radius: 8px; padding: 1.5rem; display: flex; align-items: flex-start; gap: 1.5rem; transition: all 0.3s ease; }
-        .tutorial-step:hover { transform: translateY(-5px); border-color: #555555; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
-        .tutorial-number { font-size: 3rem; font-weight: 800; color: var(--accent-color); line-height: 1; min-width: 50px; text-align: center; }
-        .tutorial-content h3 { font-size: 1.25rem; font-weight: 700; color: var(--text-accent); margin-bottom: 0.5rem; }
-        .tutorial-content p { color: var(--text-secondary); }
-        .tutorial-content code { background-color: #2a2a2a; color: var(--text-primary); padding: 0.1em 0.4em; border-radius: 4px; font-size: 0.9em; }
+        /* Tutorial */
+        .tutorial-step {
+            background: var(--bg-secondary);
+            border: 1px solid var(--border-line);
+            border-radius:8px;
+            padding:1.5rem;
+            display:flex;
+            gap:1.5rem;
+            transition:all .3s ease;
+        }
+        .tutorial-step:hover {
+            transform:translateY(-5px);
+            border-color:#555;
+            box-shadow:0 10px 30px rgba(0,0,0,.5);
+        }
+        .tutorial-number {
+            font-size:3rem;
+            font-weight:800;
+            color:var(--accent-color);
+            line-height:1;
+            min-width:50px;
+            text-align:center;
+        }
+        .tutorial-content h3 { font-size:1.25rem; font-weight:700; color:var(--text-accent); margin-bottom:.5rem; }
+        .tutorial-content p { color:var(--text-secondary); }
+        .tutorial-content code {
+            background:#2a2a2a;
+            color:var(--text-primary);
+            padding:.1em .4em;
+            border-radius:4px;
+            font-size:.9em;
+        }
 
         html { scroll-behavior: smooth; }
+
+        /* === FAKE NOTIFICATIONS === */
+        #fake-notifications {
+            position: fixed;
+            bottom: 1rem;
+            left: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: .5rem;
+            z-index: 50;
+        }
+        .fake-notif {
+            background: var(--bg-secondary);
+            color: var(--text-primary);
+            padding: .75rem 1rem;
+            border-radius: .5rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,.5);
+            transform: translateX(-100%);
+            opacity: 0;
+            transition: transform .4s ease, opacity .4s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            font-size: .875rem;
+        }
+        .fake-notif.show {
+            transform: translateX(0);
+            opacity: 1;
+        }
+        .fake-notif ion-icon {
+            color: var(--accent-color);
+            font-size: 1.25rem;
+        }
     </style>
 </head>
 <body class="bg-primary text-primary">
-
     <div class="blur-blob-1"></div>
     <div class="blur-blob-2"></div>
+
+    <!-- Fake Notifications Container -->
+    <div id="fake-notifications"></div>
 
     <nav class="navbar sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -129,9 +308,9 @@
                     <a href="Tutorial.html" class="btn-secondary text-sm font-semibold mr-4">
                         <ion-icon name="play-circle-outline" class="mr-2"></ion-icon> Tutorial Video
                     </a>
-                   <a href="#harga" class="btn-primary text-sm font-semibold">Download (windows)</a>
+                    <a href="#harga" class="btn-primary text-sm font-semibold">Download (windows)</a>
                 </div>
-                 <div class="md:hidden">
+                <div class="md:hidden">
                     <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-secondary hover:text-primary focus:outline-none">
                         <ion-icon name="menu-outline" class="h-8 w-8" id="menu-open-icon"></ion-icon>
                         <ion-icon name="close-outline" class="h-8 w-8 hidden" id="menu-close-icon"></ion-icon>
@@ -161,9 +340,9 @@
                         <span class="block text-accent">Plugin. Paling.</span>
                         <span class="block text-secondary">Berguna.</span>
                     </h1>
-                     <p class="mt-6 max-w-lg mx-auto md:mx-0 text-lg sm:text-xl text-secondary">
-                          Amlo Panel adalah <strong class="text-primary">Plugin</strong> yang <strong class="text-primary">dibuat untuk efisiensi.</strong> Ngedit di Photoshop gak pernah semudah ini.<strong class="text-primary"> Made for Photographer and Retoucher</strong>.
-                     </p>
+                    <p class="mt-6 max-w-lg mx-auto md:mx-0 text-lg sm:text-xl text-secondary">
+                        Amlo Panel adalah <strong class="text-primary">Plugin</strong> yang <strong class="text-primary">dibuat untuk efisiensi.</strong> Ngedit di Photoshop gak pernah semudah ini.<strong class="text-primary"> Made for Photographer and Retoucher</strong>.
+                    </p>
                     <div class="mt-10 flex flex-col sm:flex-row justify-center md:justify-start items-center space-y-4 sm:space-y-0 sm:space-x-4">
                         <a href="#harga" class="btn-primary w-full sm:w-auto">
                             <ion-icon name="sparkles-outline" class="mr-2"></ion-icon> Download (windows)
@@ -171,12 +350,12 @@
                         <a href="#fitur" class="btn-secondary w-full sm:w-auto">
                             <ion-icon name="arrow-down-outline" class="mr-2"></ion-icon> Jelajahi Fitur
                         </a>
-                         <a href="Tutorial.html" class="btn-secondary w-full sm:w-auto">
-        <ion-icon name="play-circle-outline" class="mr-2"></ion-icon> Tonton Tutorial
-    </a>
+                        <a href="Tutorial.html" class="btn-secondary w-full sm:w-auto">
+                            <ion-icon name="play-circle-outline" class="mr-2"></ion-icon> Tonton Tutorial
+                        </a>
                     </div>
                 </div>
-               <div class="hero-interactive-placeholder">
+                <div class="hero-interactive-placeholder">
                     <iframe
                         src="https://raw.githack.com/Amlolife/amlopanelindex/main/index.html"
                         frameborder="0"
@@ -190,36 +369,60 @@
 
     <main class="bg-primary">
         <section id="fitur" class="py-24 bg-secondary">
-             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <h2 class="section-title text-center">Dirancang untuk Efisiensi</h2>
                 <p class="section-subtitle">Setiap button yang ada disini adalah hasil ekstraksi Retouch Manual dijadikan Tombol Instan.</p>
                 <div class="grid md:grid-cols-3 gap-8 mt-12">
-                    <div class="card p-8 text-center"><ion-icon name="scan-outline" class="text-5xl text-primary mb-4 inline-block"></ion-icon><h3 class="text-xl font-semibold mb-3 text-accent">Retoucher</h3><p class="text-secondary">Meretouch kulit wajah dengan instan dengan hasil professional tanpa menghilangkan tekstur kulit yang asli</p></div>
-                    <div class="card p-8 text-center"><ion-icon name="options-outline" class="text-5xl text-primary mb-4 inline-block"></ion-icon><h3 class="text-xl font-semibold mb-3 text-accent">Kustomisasi</h3><p class="text-secondary">Semua fungsi di Amlo Panel bersifat non-destructive, anda bisa mengkustomisasi hasil.</p></div>
-                    <div class="card p-8 text-center"><ion-icon name="layers-outline" class="text-5xl text-primary mb-4 inline-block"></ion-icon><h3 class="text-xl font-semibold mb-3 text-accent">Stock Photo</h3><p class="text-secondary">Mencari stock foto gratis langsung terintegrasi dari Amlo Panel.</p></div>
+                    <div class="card p-8 text-center">
+                        <ion-icon name="scan-outline" class="text-5xl text-primary mb-4 inline-block"></ion-icon>
+                        <h3 class="text-xl font-semibold mb-3 text-accent">Retoucher</h3>
+                        <p class="text-secondary">Meretouch kulit wajah dengan instan dengan hasil professional tanpa menghilangkan tekstur kulit yang asli</p>
+                    </div>
+                    <div class="card p-8 text-center">
+                        <ion-icon name="options-outline" class="text-5xl text-primary mb-4 inline-block"></ion-icon>
+                        <h3 class="text-xl font-semibold mb-3 text-accent">Kustomisasi</h3>
+                        <p class="text-secondary">Semua fungsi di Amlo Panel bersifat non-destructive, anda bisa mengkustomisasi hasil.</p>
+                    </div>
+                    <div class="card p-8 text-center">
+                        <ion-icon name="layers-outline" class="text-5xl text-primary mb-4 inline-block"></ion-icon>
+                        <h3 class="text-xl font-semibold mb-3 text-accent">Stock Photo</h3>
+                        <p class="text-secondary">Mencari stock foto gratis langsung terintegrasi dari Amlo Panel.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
         <section id="testimoni" class="py-24 bg-primary">
-             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <h2 class="section-title text-center">Amlo Panel Menurut Mereka</h2>
                 <p class="section-subtitle">Bagaimana Amlo Panel menurut para fotografer.</p>
                 <div class="grid md:grid-cols-2 gap-8 mt-12">
                     <div class="card p-6 border-l-4 border-line hover:border-[var(--accent-color)]">
                         <p class="text-secondary italic text-lg mb-6">"Ngebantu banget! Seenggaknya gua bisa ngeretouch wajah client gua 3x lebih cepat"</p>
-                        <div class="flex items-center"><img src="https://placehold.co/50x50/141414/e0e0e0?text=AD" alt="Andi" class="w-10 h-10 rounded-full mr-4 border border-line"><div><p class="font-semibold text-accent">Andi Pratama</p><p class="text-sm text-secondary">Fotografer Profesional</p></div></div>
+                        <div class="flex items-center">
+                            <img src="https://placehold.co/50x50/141414/e0e0e0?text=AD" alt="Andi" class="w-10 h-10 rounded-full mr-4 border border-line">
+                            <div>
+                                <p class="font-semibold text-accent">Andi Pratama</p>
+                                <p class="text-sm text-secondary">Fotografer Profesional</p>
+                            </div>
+                        </div>
                     </div>
-                     <div class="card p-6 border-l-4 border-line hover:border-[var(--accent-color)]">
-                        <p class="text-secondary italic text-lg mb-6">"Akhirnya! Ada plugin yang bisa bantu gua nyelesain permintaan client kayak "tolong wajah saya di retouc" "tolong giginya diputihin" "tolong muka saya diputihin dong" asli ngebantu banget sih!."</p>
-                        <div class="flex items-center"><img src="https://placehold.co/50x50/141414/e0e0e0?text=SR" alt="Sari" class="w-10 h-10 rounded-full mr-4 border border-line"><div><p class="font-semibold text-accent">Sari Rahayu</p><p class="text-sm text-secondary">Fotografer Wedding</p></div></div>
+                    <div class="card p-6 border-l-4 border-line hover:border-[var(--accent-color)]">
+                        <p class="text-secondary italic text-lg mb-6">"Akhirnya! Ada plugin yang bisa bantu gua nyelesain permintaan client kayak 'tolong wajah saya di retouch' 'tolong giginya diputihin' 'tolong muka saya diputihin dong' asli ngebantu banget sih!."</p>
+                        <div class="flex items-center">
+                            <img src="https://placehold.co/50x50/141414/e0e0e0?text=SR" alt="Sari" class="w-10 h-10 rounded-full mr-4 border border-line">
+                            <div>
+                                <p class="font-semibold text-accent">Sari Rahayu</p>
+                                <p class="text-sm text-secondary">Fotografer Wedding</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
 
         <section id="tutorial" class="py-24 bg-secondary">
-             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <h2 class="section-title text-center">Cara Install & Pakai</h2>
                 <p class="section-subtitle">Ikuti langkah mudah berikut untuk mulai menggunakan Amlo Panel (MINIMAL ADOBE PHOTOSHOP 2020).</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
@@ -227,31 +430,31 @@
                         <div class="tutorial-number">1</div>
                         <div class="tutorial-content">
                             <h3>Download Installer</h3>
-                            <p>Klik tombol 'Download Sekarang!' di bawah untuk mengunduh file installer (<code>AmloRetouchInstallerexe</code>).</p>
+                            <p>Klik tombol 'Download Sekarang!' di bawah untuk mengunduh file installer (<code>AmloRetouchInstaller.exe</code>).</p>
                         </div>
                     </div>
-                     <div class="tutorial-step">
+                    <div class="tutorial-step">
                         <div class="tutorial-number">2</div>
                         <div class="tutorial-content">
                             <h3>Jalankan Installer</h3>
                             <p>Setelah terunduh, klik kanan file <code>.exe</code> tersebut dan pilih '<strong>Run as administrator</strong>'. Ikuti petunjuk di layar hingga proses instalasi selesai.</p>
                         </div>
                     </div>
-                     <div class="tutorial-step">
+                    <div class="tutorial-step">
                         <div class="tutorial-number">3</div>
                         <div class="tutorial-content">
                             <h3>Buka/Restart Photoshop</h3>
                             <p>Pastikan Anda menutup Photoshop sebelum menginstall. Setelah instalasi selesai, buka kembali Adobe Photoshop Anda (minimal CC 2020).</p>
                         </div>
                     </div>
-                     <div class="tutorial-step">
+                    <div class="tutorial-step">
                         <div class="tutorial-number">4</div>
                         <div class="tutorial-content">
                             <h3>Buka Panel</h3>
                             <p>Di dalam Photoshop, navigasikan ke menu: <code>Window</code> &rarr; <code>Extensions</code> &rarr; <code>Amlo Panel</code>. Panel akan muncul di layar Anda.</p>
                         </div>
                     </div>
-                     <div class="tutorial-step md:col-span-2">
+                    <div class="tutorial-step md:col-span-2">
                         <div class="tutorial-number">5</div>
                         <div class="tutorial-content">
                             <h3>Mulai Mengedit!</h3>
@@ -261,19 +464,18 @@
                 </div>
             </div>
         </section>
-        <section id="harga" class="py-24 bg-primary"> <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+
+        <section id="harga" class="py-24 bg-primary">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
                 <h2 class="section-title">Launched!</h2>
                 <p id="pricing-subtitle" class="section-subtitle">Diskon 50.17% dari <span class="line-through text-red-500">Rp 299.000</span> (hanya untuk 20 pembeli pertama!)</p>
-
                 <div class="card p-8 md:p-12 max-w-lg mx-auto border-2 border-[var(--accent-color)] shadow-2xl shadow-[var(--accent-color)]/10">
                     <h3 class="text-xl font-semibold text-accent mb-2">AMLO PANEL</h3>
                     <p class="text-lg text-secondary mb-8">Special Harga Launching (sampai 31 Mei 2025)</p>
-
-                  <p class="font-extrabold mb-6 flex flex-col md:flex-row items-center md:items-baseline justify-center">
-    <span class="text-5xl md:text-6xl text-red-500 line-through mb-1 md:mb-0 md:mr-3">Rp 299.000</span>
-    <span class="text-4xl md:text-5xl text-price">Rp 99.000</span>
-</p>
-
+                    <p class="font-extrabold mb-6 flex flex-col md:flex-row items-center md:items-baseline justify-center">
+                        <span class="text-5xl md:text-6xl text-red-500 line-through mb-1 md:mb-0 md:mr-3">Rp 299.000</span>
+                        <span class="text-4xl md:text-5xl text-price">Rp 99.000</span>
+                    </p>
                     <div id="countdown-container" class="mb-10">
                         <p class="text-secondary text-lg mb-6">Penjualan Dibuka Dalam:</p>
                         <div id="countdown-timer" class="flex justify-center space-x-3 sm:space-x-6">
@@ -283,7 +485,6 @@
                             <div><div id="seconds" class="timer-value">00</div><div class="timer-label">DETIK</div></div>
                         </div>
                     </div>
-
                     <ul class="text-secondary space-y-4 mb-10 text-left w-fit mx-auto">
                         <li class="flex items-center"><ion-icon name="checkmark-outline" class="text-primary mr-3 text-xl"></ion-icon>Semua Fitur Pro</li>
                         <li class="flex items-center"><ion-icon name="checkmark-outline" class="text-primary mr-3 text-xl"></ion-icon>Retouch Instan</li>
@@ -291,28 +492,67 @@
                         <li class="flex items-center"><ion-icon name="checkmark-outline" class="text-primary mr-3 text-xl"></ion-icon>Windows</li>
                         <li class="flex items-center"><ion-icon name="checkmark-outline" class="text-primary mr-3 text-xl"></ion-icon>Update Gratis Seumur Hidup</li>
                     </ul>
-
                     <a id="buy-button" href="https://amlo-life.myr.id/pl/amlo-panel" target="_blank" rel="noopener noreferrer" class="btn-primary w-full text-lg py-4 hidden">
                         <ion-icon name="key-outline" class="mr-2"></ion-icon> Download Sekarang! (windows)
                     </a>
                     <button id="buy-button-disabled" class="btn-primary disabled w-full text-lg py-4">
                         <ion-icon name="time-outline" class="mr-2"></ion-icon> Coming Soon...
                     </button>
-
                     <p class="text-xs text-secondary mt-6">Pembayaran aman menggunakan Mayar.id.</p>
                 </div>
             </div>
         </section>
 
-        <section id="faq" class="py-24 bg-secondary"> <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <section id="faq" class="py-24 bg-secondary">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <h2 class="section-title text-center">Yang Perlu Anda Tahu</h2>
                 <p class="section-subtitle">Jawaban untuk pertanyaan umum tentang Amlo Panel.</p>
                 <div class="mt-12 border-t border-line rounded-lg overflow-hidden">
-                    <div class="faq-item"><div class="faq-question"><span>Bagaimana cara instalasi?</span><ion-icon name="chevron-down-outline" class="faq-icon text-2xl"></ion-icon></div><div class="faq-answer"><p>Sangat mudah! Anda hanya perlu download file installer .exe, jalankan sebagai administrator, lalu buka Photoshop. Cek bagian <a href="#tutorial" class="text-accent underline">Tutorial</a> untuk langkah detail atau <a href="Tutorial.html" class="text-accent underline">tonton videonya</a>.</p></div></div>
-                    <div class="faq-item"><div class="faq-question"><span>Apakah ada biaya bulanan?</span><ion-icon name="chevron-down-outline" class="faq-icon text-2xl"></ion-icon></div><div class="faq-answer"><p>Tidak. Ini adalah pembelian satu kali. Anda mendapatkan lisensi seumur hidup, termasuk update gratis!</p></div></div>
-                    <div class="faq-item"><div class="faq-question"><span>Versi Photoshop mana yang didukung?</span><ion-icon name="chevron-down-outline" class="faq-icon text-2xl"></ion-icon></div><div class="faq-answer"><p>Amlo Panel kompatibel dengan minimal Adobe Photoshop CC 2021 keatas, baik untuk Windows maupun macOS.</p></div></div>
-                    <div class="faq-item"><div class="faq-question"><span>Apakah Harus Online?</span><ion-icon name="chevron-down-outline" class="faq-icon text-2xl"></ion-icon></div><div class="faq-answer"><p>Fitur yang mengharuskan anda online hanyalah Pixabay Stock Photos Search, sisanya Amlo Panel bekerja secara Offline.</p></div></div>
-                     <div class="faq-item"><div class="faq-question"><span>Apakah saya akan dapat update?</span><ion-icon name="chevron-down-outline" class="faq-icon text-2xl"></ion-icon></div><div class="faq-answer"><p>Tentu saja! Semua pembeli akan mendapatkan update fitur dan perbaikan bug secara gratis, seumur hidup.</p></div></div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Bagaimana cara instalasi?</span>
+                            <ion-icon name="chevron-down-outline" class="faq-icon text-2xl"></ion-icon>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Sangat mudah! Anda hanya perlu download file installer .exe, jalankan sebagai administrator, lalu buka Photoshop. Cek bagian <a href="#tutorial" class="text-accent underline">Tutorial</a> untuk langkah detail atau <a href="Tutorial.html" class="text-accent underline">tonton videonya</a>.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Apakah ada biaya bulanan?</span>
+                            <ion-icon name="chevron-down-outline" class="faq-icon text-2xl"></ion-icon>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Tidak. Ini adalah pembelian satu kali. Anda mendapatkan lisensi seumur hidup, termasuk update gratis!</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Versi Photoshop mana yang didukung?</span>
+                            <ion-icon name="chevron-down-outline" class="faq-icon text-2xl"></ion-icon>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Amlo Panel kompatibel dengan minimal Adobe Photoshop CC 2021 keatas, baik untuk Windows maupun macOS.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Apakah Harus Online?</span>
+                            <ion-icon name="chevron-down-outline" class="faq-icon text-2xl"></ion-icon>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Fitur yang mengharuskan anda online hanyalah Pixabay Stock Photos Search, sisanya Amlo Panel bekerja secara Offline.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Apakah saya akan dapat update?</span>
+                            <ion-icon name="chevron-down-outline" class="faq-icon text-2xl"></ion-icon>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Tentu saja! Semua pembeli akan mendapatkan update fitur dan perbaikan bug secara gratis, seumur hidup.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -320,7 +560,7 @@
 
     <footer class="bg-secondary border-t border-line">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-secondary text-xs">
-            <p>© <span id="currentYear"></span> Amlo Panel - amlo.life</p>
+            <p>© <span id="currentYear"></span> Amло Panel - amlo.life</p>
         </div>
     </footer>
 
@@ -339,22 +579,18 @@
             closeIcon.classList.toggle('hidden');
         });
         document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', (e) => { // Tambahkan e
-                 // Hanya tutup menu jika BUKAN link ke halaman lain
+            link.addEventListener('click', (e) => {
                 if (link.getAttribute('href').startsWith('#')) {
                     mobileMenu.classList.add('hidden');
                     openIcon.classList.remove('hidden');
                     closeIcon.classList.add('hidden');
-                    // Smooth scroll for mobile links (hanya untuk internal)
                     const targetId = link.getAttribute('href');
                     const targetElement = document.querySelector(targetId);
                     if(targetElement) {
-                        e.preventDefault(); // Cegah default HANYA untuk scroll
+                        e.preventDefault();
                         targetElement.scrollIntoView({ behavior: 'smooth' });
                     }
                 }
-                // Jika link ke Tutorial.html, biarkan browser menavigasi (jangan tutup menu)
-                // Sebenarnya lebih baik tutup saja setelah klik
                 mobileMenu.classList.add('hidden');
                 openIcon.classList.remove('hidden');
                 closeIcon.classList.add('hidden');
@@ -366,14 +602,8 @@
             button.addEventListener('click', () => {
                 const faqItem = button.parentElement;
                 const wasOpen = faqItem.classList.contains('open');
-
-                document.querySelectorAll('.faq-item').forEach(item => {
-                   item.classList.remove('open');
-                });
-
-                if (!wasOpen) {
-                  faqItem.classList.add('open');
-                }
+                document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('open'));
+                if (!wasOpen) faqItem.classList.add('open');
             });
         });
 
@@ -382,58 +612,74 @@
         const buyButton = document.getElementById('buy-button');
         const buyButtonDisabled = document.getElementById('buy-button-disabled');
         const pricingSubtitle = document.getElementById('pricing-subtitle');
-
-        // Set the date we're counting down to (27 Mei 2025 00:00:00 WIB - UTC+7)
-        // **PASTIKAN TANGGAL INI SUDAH BENAR**
         const countdownDate = new Date('2025-05-27T00:00:00+07:00').getTime();
-
-        const updateTimer = () => {
-            const now = new Date().getTime();
+        function updateTimer() {
+            const now = Date.now();
             const distance = countdownDate - now;
-
             if (distance <= 0) {
                 clearInterval(timerInterval);
                 countdownContainer.classList.add('hidden');
                 buyButton.classList.remove('hidden');
                 buyButtonDisabled.classList.add('hidden');
-                pricingSubtitle.innerHTML = "Penjualan Telah Dibuka! Download Amlo Panel Sekarang!"; // Updated text
-                return; // Stop the function
+                pricingSubtitle.innerHTML = "Penjualan Telah Dibuka! Download Amlo Panel Sekarang!";
+                return;
             }
-
-            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-            const format = (num) => num < 10 ? '0' + num : num;
-
-            document.getElementById('days').textContent = format(days);
-            document.getElementById('hours').textContent = format(hours);
-            document.getElementById('minutes').textContent = format(minutes);
-            document.getElementById('seconds').textContent = format(seconds);
-
+            const days = Math.floor(distance / (1000*60*60*24));
+            const hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
+            const minutes = Math.floor((distance % (1000*60*60))/(1000*60));
+            const seconds = Math.floor((distance % (1000*60))/1000);
+            const fmt = num => num<10?'0'+num:num;
+            document.getElementById('days').textContent = fmt(days);
+            document.getElementById('hours').textContent = fmt(hours);
+            document.getElementById('minutes').textContent = fmt(minutes);
+            document.getElementById('seconds').textContent = fmt(seconds);
             buyButton.classList.add('hidden');
             buyButtonDisabled.classList.remove('hidden');
             countdownContainer.classList.remove('hidden');
-        };
-
-        const timerInterval = setInterval(updateTimer, 1000);
+        }
+        const timerInterval = setInterval(updateTimer,1000);
         updateTimer();
 
-        // Smooth scrolling for Desktop
+        // Smooth scrolling desktop
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                // Hanya lakukan smooth scroll jika BUKAN link mobile
-                if(!this.closest('#mobile-menu')) {
+            anchor.addEventListener('click', function(e){
+                if(!this.closest('#mobile-menu')){
                     e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const targetElement = document.querySelector(targetId);
-                    if(targetElement) {
-                        targetElement.scrollIntoView({ behavior: 'smooth' });
-                    }
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if(target) target.scrollIntoView({ behavior:'smooth' });
                 }
             });
         });
+
+        // === FAKE NOTIFICATIONS LOGIC ===
+        const messages = [
+            "Andi Pratama baru saja membeli Amlo Panel ✅",
+            "Sari Rahayu membeli lisensi Amlo Panel 🎉",
+            "Budi Santoso upgrade ke Amlo Panel PRO ✨",
+            "Fitri Lestari menambahkan Amlo Panel ke keranjang 🛒",
+            "Rina Dewi sukses checkout Amlo Panel 💳",
+            "Yoga Pratama dapat update gratis Amlo Panel 🔄",
+            "Lia Kusuma merekomendasikan Amlo Panel 👍",
+            "Dedi Kurniawan baru saja bayar via Mayar.id 💰",
+            "Fajar Nugraha share Amlo Panel ke temannya 📤",
+            "Nina Amalia beli 2 lisensi Amlo Panel 💼"
+        ];
+        function showFakeNotification(text) {
+            const container = document.getElementById('fake-notifications');
+            const notif = document.createElement('div');
+            notif.className = 'fake-notif';
+            notif.innerHTML = `<ion-icon name="megaphone-outline"></ion-icon><span>${text}</span>`;
+            container.appendChild(notif);
+            requestAnimationFrame(() => notif.classList.add('show'));
+            setTimeout(() => {
+                notif.classList.remove('show');
+                setTimeout(() => container.removeChild(notif), 500);
+            }, 5000);
+        }
+        setTimeout(function loop(){
+            showFakeNotification(messages[Math.floor(Math.random()*messages.length)]);
+            setTimeout(loop, 20000 + Math.random()*20000);
+        }, 10000);
     </script>
 </body>
 </html>
