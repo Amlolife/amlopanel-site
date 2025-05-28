@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Tutorial - Amlo Panel</title> <meta name="description" content="Tonton video tutorial cara menggunakan Amlo Panel untuk memaksimalkan workflow retouching Photoshop Anda."> <link rel="icon" href="/favicon.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-M3XXW7FDMS"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-M3XXW7FDMS');
+    </script>
+
+    <style>
+        :root {
+            --accent-color: #00C9FF; /* Cyan Elektrik */
+            --accent-color-dark: #00A3CC;
+            --bg-primary: #0a0a0a;
+            --bg-secondary: #141414;
+            --border-line: #2a2a2a;
+            --text-primary: #e0e0e0;
+            --text-secondary: #888888;
+            --text-accent: #ffffff;
+        }
+        body { font-family: 'Inter', sans-serif; background-color: var(--bg-primary); color: var(--text-primary); -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; overflow-x: hidden; }
+        body::before { content: ""; position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 250 250' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.95' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E"); background-size: 250px 250px; opacity: 0.025; pointer-events: none; z-index: -1; will-change: opacity; }
+        .blur-blob-1, .blur-blob-2 { position: absolute; border-radius: 50%; filter: blur(80px); z-index: 0; pointer-events: none; }
+        .blur-blob-1 { top: 10%; right: -15%; width: 400px; height: 400px; background: radial-gradient(circle, rgba(0, 201, 255, 0.05) 0%, rgba(0, 201, 255, 0) 70%); }
+        .blur-blob-2 { bottom: 5%; left: -10%; width: 500px; height: 500px; background: radial-gradient(circle, rgba(150, 150, 150, 0.06) 0%, rgba(150, 150, 150, 0) 65%); }
+        .btn-primary { background-color: var(--accent-color); color: #000000; padding: 0.75rem 1.5rem; border-radius: 6px; font-weight: 700; transition: all 0.2s ease-in-out; border: 1px solid var(--accent-color); box-shadow: 0 4px 15px rgba(0, 201, 255, 0.2); display: inline-flex; align-items: center; justify-content: center; }
+        .btn-primary:hover { background-color: var(--accent-color-dark); color: #000000; border-color: var(--accent-color-dark); transform: translateY(-2px); box-shadow: 0 8px 25px rgba(0, 201, 255, 0.3); }
+        .btn-secondary { background-color: transparent; color: var(--accent-color); border: 1px solid var(--accent-color); padding: 0.75rem 1.5rem; border-radius: 6px; font-weight: 600; transition: all 0.2s ease-in-out; display: inline-flex; align-items: center; justify-content: center; }
+        .btn-secondary:hover { background-color: rgba(0, 201, 255, 0.1); color: var(--accent-color); box-shadow: 0 0 10px rgba(0, 201, 255, 0.1); }
+        .card { background-color: rgba(20, 20, 20, 0.6); border: 1px solid var(--border-line); border-radius: 8px; transition: all 0.3s ease; backdrop-filter: blur(5px); }
+        .card:hover { transform: translateY(-5px); border-color: #555555; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5); }
+        .section-title { font-size: 2.5rem; font-weight: 800; color: var(--text-accent); margin-bottom: 1rem; letter-spacing: -1px; }
+        .section-subtitle { font-size: 1.125rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 3rem auto; text-align: center; }
+        .nav-link { color: #aaaaaa; transition: color 0.2s ease; font-weight: 500; }
+        .nav-link:hover, .nav-link.active { color: var(--text-accent); } /* Tambahkan .active */
+        .navbar { background-color: rgba(10, 10, 10, 0.7); backdrop-filter: blur(12px); border-bottom: 1px solid #1a1a1a; }
+        ion-icon { color: #888888; transition: color 0.2s ease; }
+        header, main, footer, nav { position: relative; z-index: 10; }
+        html { scroll-behavior: smooth; }
+
+        /* Video Styles */
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 6px;
+            border: 1px solid var(--border-line);
+        }
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+        .video-card {
+            background-color: var(--bg-secondary);
+            border: 1px solid var(--border-line);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: all 0.3s ease;
+        }
+         .video-card:hover {
+            transform: translateY(-5px);
+            border-color: #555555;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+        .video-card h3 {
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: var(--text-accent);
+            margin-top: 1rem;
+            margin-bottom: 0.5rem;
+        }
+        .video-card p {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body class="bg-primary text-primary">
+
+    <div class="blur-blob-1"></div>
+    <div class="blur-blob-2"></div>
+
+    <nav class="navbar sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-20">
+                <div class="flex items-center">
+                    <a href="index.html" class="text-3xl font-bold tracking-tighter" style="color: var(--accent-color);"> Amlo<span class="font-light text-primary">Panel</span>
+                    </a>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-8">
+                        <a href="index.html#fitur" class="nav-link text-sm">Fitur</a> <a href="index.html#testimoni" class="nav-link text-sm">Testimoni</a> <a href="videos.html" class="nav-link text-sm active">Tutorial</a> <a href="index.html#harga" class="nav-link text-sm">Harga</a> <a href="index.html#faq" class="nav-link text-sm">FAQ</a> </div>
+                </div>
+                <div class="hidden md:block">
+                   <a href="index.html#harga" class="btn-primary text-sm font-semibold">Download (windows)</a> </div>
+                 <div class="md:hidden">
+                    <button id="mobile-menu-button" type="button" class="inline-flex items-center justify-center p-2 rounded-md text-secondary hover:text-primary focus:outline-none">
+                        <ion-icon name="menu-outline" class="h-8 w-8" id="menu-open-icon"></ion-icon>
+                        <ion-icon name="close-outline" class="h-8 w-8 hidden" id="menu-close-icon"></ion-icon>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden hidden" id="mobile-menu">
+            <div class="px-4 pt-4 pb-6 space-y-3 sm:px-6 border-t border-line">
+                <a href="index.html#fitur" class="nav-link block text-base">Fitur</a>
+                <a href="index.html#testimoni" class="nav-link block text-base">Testimoni</a>
+                <a href="videos.html" class="nav-link block text-base active">Tutorial</a>
+                <a href="index.html#harga" class="nav-link block text-base">Harga</a>
+                <a href="index.html#faq" class="nav-link block text-base">FAQ</a>
+                <a href="index.html#harga" class="btn-primary block text-base text-center mt-4">Download Sekarang (windows)!</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="bg-primary py-24">
+        <section id="video-tutorials" class="bg-primary">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <h2 class="section-title text-center">Video Tutorial Amlo Panel</h2>
+                <p class="section-subtitle">Pelajari cara menggunakan setiap fitur Amlo Panel melalui video panduan berikut.</p>
+
+                <div class="grid md:grid-cols-2 gap-8 mt-12">
+
+                    <div class="video-card">
+                        <div class="video-container">
+                            <iframe
+                                src="https://www.youtube.com/embed/huDu30c4gHs" title="YouTube video player 1"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <h3>Fitur Retouch1</h3>
+                        <p>Tutorial Penggunaan Fitur Retouch.</p>
+                    </div>
+
+                    <div class="video-card">
+                        <div class="video-container">
+                             <iframe
+                                src="https://www.youtube.com/embed/VIDEO_ID_2" title="YouTube video player 2"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <h3>Judul Video Tutorial 2</h3>
+                        <p>Penjelasan mengenai fitur lain atau langkah-langkah penggunaan.</p>
+                    </div>
+
+                    <div class="video-card">
+                        <div class="video-container">
+                             <iframe
+                                src="https://www.youtube.com/embed/VIDEO_ID_3" title="YouTube video player 3"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <h3>Judul Video Tutorial 3</h3>
+                        <p>Tips dan trik menggunakan Amlo Panel.</p>
+                    </div>
+
+                    <div class="video-card">
+                        <div class="video-container">
+                             <iframe
+                                src="https://www.youtube.com/embed/VIDEO_ID_4" title="YouTube video player 4"
+                                frameborder="0"
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                allowfullscreen></iframe>
+                        </div>
+                        <h3>Judul Video Tutorial 4</h3>
+                        <p>Contoh kasus penggunaan Amlo Panel dalam project nyata.</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-secondary border-t border-line">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 text-center text-secondary text-xs">
+            <p>© <span id="currentYear"></span> Amlo Panel - amlo.life</p>
+        </div>
+    </footer>
+
+    <script>
+        // Set current year
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const openIcon = document.getElementById('menu-open-icon');
+        const closeIcon = document.getElementById('menu-close-icon');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+            openIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+        });
+        // Close menu when a link is clicked
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                openIcon.classList.remove('hidden');
+                closeIcon.classList.add('hidden');
+            });
+        });
+
+        // Hapus FAQ & Countdown & Smooth Scroll (karena tidak ada di halaman ini)
+        // Jika Anda ingin smooth scroll antar halaman, itu perlu pendekatan berbeda
+        // atau biarkan browser menangani link standar.
+    </script>
+</body>
+</html>
