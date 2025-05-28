@@ -18,6 +18,8 @@
       gtag('config', 'G-M3XXW7FDMS');
     </script>
 
+    <link rel="stylesheet" href="https://unpkg.com/img-comparison-slider@8/dist/styles.css" />
+    <script src="https://unpkg.com/img-comparison-slider@8/dist/index.js" defer></script>
     <style>
         :root {
             --accent-color: #00C9FF; /* Cyan Elektrik */
@@ -279,13 +281,38 @@
             color: var(--accent-color);
             font-size: 1.25rem;
         }
+
+        /* === BEFORE/AFTER SLIDER STYLES === */
+        img-comparison-slider {
+            --divider-width: 3px;
+            --divider-color: var(--accent-color);
+            --handle-size: 50px;
+            --handle-color: var(--accent-color);
+            --handle-background-color: var(--bg-secondary);
+            --handle-box-shadow: 0 0 15px rgba(0, 201, 255, .4);
+            border-radius: 8px; /* Match card style */
+            border: 1px solid var(--border-line);
+            width: 100%;
+            max-width: 800px; /* Adjust as needed */
+            margin: auto;
+            box-shadow: 0 10px 30px rgba(0,0,0,.3);
+            cursor: col-resize;
+        }
+        .slider-container {
+            background: #141414;
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,.3);
+        }
+        /* === END SLIDER STYLES === */
+
     </style>
 </head>
 <body class="bg-primary text-primary">
     <div class="blur-blob-1"></div>
     <div class="blur-blob-2"></div>
 
-    <!-- Fake Notifications Container -->
     <div id="fake-notifications"></div>
 
     <nav class="navbar sticky top-0 z-50">
@@ -299,7 +326,7 @@
                 <div class="hidden md:block">
                     <div class="ml-10 flex items-baseline space-x-8">
                         <a href="#fitur" class="nav-link text-sm">Fitur</a>
-                        <a href="#testimoni" class="nav-link text-sm">Testimoni</a>
+                        <a href="#demo" class="nav-link text-sm">Demo</a> <a href="#testimoni" class="nav-link text-sm">Testimoni</a>
                         <a href="#harga" class="nav-link text-sm">Harga</a>
                         <a href="#faq" class="nav-link text-sm">FAQ</a>
                     </div>
@@ -321,7 +348,7 @@
         <div class="md:hidden hidden" id="mobile-menu">
             <div class="px-4 pt-4 pb-6 space-y-3 sm:px-6 border-t border-line">
                 <a href="#fitur" class="nav-link block text-base">Fitur</a>
-                <a href="#testimoni" class="nav-link block text-base">Testimoni</a>
+                <a href="#demo" class="nav-link block text-base">Demo</a> <a href="#testimoni" class="nav-link block text-base">Testimoni</a>
                 <a href="#harga" class="nav-link block text-base">Harga</a>
                 <a href="#faq" class="nav-link block text-base">FAQ</a>
                 <a href="Tutorial.html" class="btn-secondary block text-base text-center mt-4">
@@ -392,8 +419,20 @@
             </div>
         </section>
 
-        <section id="testimoni" class="py-24 bg-primary">
+        <section id="demo" class="py-24 bg-primary">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+                <h2 class="section-title text-center">Lihat Keajaiban Amlo Panel</h2>
+                <p class="section-subtitle">Geser slider untuk melihat perbedaan retouching instan dengan satu klik.</p>
+                <div class="slider-container mt-12">
+                   <img-comparison-slider>
+                       <img slot="first" src="before.jpg" alt="Before Retouch">
+                       <img slot="second" src="after.jpg" alt="After Retouch">
+                   </img-comparison-slider>
+                </div>
+                 <p class="text-center mt-6 text-sm text-secondary">Pastikan Anda mengunggah file <code>before.jpg</code> dan <code>after.jpg</code> ke direktori yang sama dengan file HTML ini.</p>
+            </div>
+        </section>
+        <section id="testimoni" class="py-24 bg-secondary"> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <h2 class="section-title text-center">Amlo Panel Menurut Mereka</h2>
                 <p class="section-subtitle">Bagaimana Amlo Panel menurut para fotografer.</p>
                 <div class="grid md:grid-cols-2 gap-8 mt-12">
@@ -421,8 +460,7 @@
             </div>
         </section>
 
-        <section id="tutorial" class="py-24 bg-secondary">
-            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <section id="tutorial" class="py-24 bg-primary"> <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <h2 class="section-title text-center">Cara Install & Pakai</h2>
                 <p class="section-subtitle">Ikuti langkah mudah berikut untuk mulai menggunakan Amlo Panel (MINIMAL ADOBE PHOTOSHOP 2020).</p>
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-12">
@@ -465,8 +503,7 @@
             </div>
         </section>
 
-        <section id="harga" class="py-24 bg-primary">
-            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
+        <section id="harga" class="py-24 bg-secondary"> <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
                 <h2 class="section-title">Launched!</h2>
                 <p id="pricing-subtitle" class="section-subtitle">Diskon 50.17% dari <span class="line-through text-red-500">Rp 299.000</span> (hanya untuk 20 pembeli pertama!)</p>
                 <div class="card p-8 md:p-12 max-w-lg mx-auto border-2 border-[var(--accent-color)] shadow-2xl shadow-[var(--accent-color)]/10">
@@ -503,8 +540,7 @@
             </div>
         </section>
 
-        <section id="faq" class="py-24 bg-secondary">
-            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <section id="faq" class="py-24 bg-primary"> <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <h2 class="section-title text-center">Yang Perlu Anda Tahu</h2>
                 <p class="section-subtitle">Jawaban untuk pertanyaan umum tentang Amlo Panel.</p>
                 <div class="mt-12 border-t border-line rounded-lg overflow-hidden">
@@ -591,6 +627,7 @@
                         targetElement.scrollIntoView({ behavior: 'smooth' });
                     }
                 }
+                 // Always close menu after click for non-hash links too
                 mobileMenu.classList.add('hidden');
                 openIcon.classList.remove('hidden');
                 closeIcon.classList.add('hidden');
