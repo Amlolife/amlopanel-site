@@ -3,20 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amlo App - Inspirasi Pose Fotografi Modern</title>
+    <title>Amlo App - Inspirasi Pose Fotografi Penuh Warna</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #FDFCFB; /* Very light beige/off-white */
-            --text-color-dark: #3D405B; /* Dark desaturated blue/purple for text */
-            --text-color-medium: #7A7D91;
-            --primary-accent: #8FBC8F; /* Soft, desaturated sage green */
-            --primary-accent-darker: #70a370;
+            --bg-color: #FFFBF7; /* Very pale warm off-white/peach */
+            --text-color-dark: #4A5568; /* Dark slate gray-blue */
+            --text-color-medium: #718096; /* Medium slate gray-blue */
+            
+            --primary-accent: #FFA07A; /* LightSalmon - main CTA color */
+            --primary-accent-darker: #FF8C69; /* Darker LightSalmon */
+
+            /* Diverse Pastel Accents */
+            --pastel-blue: #ADD8E6; /* Light Blue */
+            --pastel-yellow: #FFFACD; /* Lemon Chiffon */
+            --pastel-green: #98FB98; /* Pale Green */
+            --pastel-pink: #FFD1DC; /* Pink */
+            --pastel-lavender: #E6E6FA; /* Lavender */
+
             --card-bg: #FFFFFF;
-            --border-color: #E0E0E0;
-            --shadow-color: rgba(61, 64, 91, 0.08); /* Subtle shadow based on text color */
+            --border-color: #E2E8F0; /* Lighter slate border */
+            --shadow-color: rgba(74, 85, 104, 0.08); 
+
             --font-heading: 'Outfit', sans-serif;
             --font-body: 'Inter', sans-serif;
         }
@@ -47,7 +57,7 @@
             justify-content: space-between;
             align-items: center;
             padding: 20px 0;
-            border-bottom: 1px solid var(--border-color);
+            /* border-bottom: 1px solid var(--border-color); Keep it light */
         }
         .nav-logo a {
             font-family: var(--font-heading);
@@ -68,7 +78,7 @@
             transition: color 0.3s ease;
         }
         .nav-links a:hover, .nav-links a.active {
-            color: var(--primary-accent);
+            color: var(--primary-accent); /* Main accent for active/hover */
         }
         .nav-cta .btn {
             padding: 10px 25px;
@@ -82,28 +92,28 @@
             font-weight: 600;
             font-size: 0.95em;
             text-decoration: none;
-            border-radius: 50px; /* Pill shape like Dribbble */
+            border-radius: 50px;
             transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
             cursor: pointer;
             border: none;
         }
         .btn-primary {
             background-color: var(--primary-accent);
-            color: var(--card-bg);
-            box-shadow: 0 4px 15px rgba(143, 188, 143, 0.3);
+            color: var(--card-bg); /* White text for good contrast */
+            box-shadow: 0 4px 15px rgba(255, 160, 122, 0.3); /* Shadow from primary accent */
         }
         .btn-primary:hover {
             background-color: var(--primary-accent-darker);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(143, 188, 143, 0.4);
+            box-shadow: 0 6px 20px rgba(255, 160, 122, 0.4);
         }
-        .btn-secondary {
+        .btn-secondary { /* Can use another pastel for secondary */
             background-color: transparent;
-            color: var(--primary-accent);
-            border: 2px solid var(--primary-accent);
+            color: var(--pastel-blue); /* Example: Pastel Blue for secondary button text */
+            border: 2px solid var(--pastel-blue);
         }
         .btn-secondary:hover {
-            background-color: var(--primary-accent);
+            background-color: var(--pastel-blue);
             color: var(--card-bg);
         }
 
@@ -113,7 +123,7 @@
             padding: 80px 0 60px;
             text-align: center;
             position: relative;
-            overflow: hidden; /* For blobs */
+            overflow: hidden;
         }
         .hero-content {
             max-width: 750px;
@@ -123,13 +133,13 @@
         }
         .hero h1 {
             font-family: var(--font-heading);
-            font-size: clamp(2.8em, 6vw, 4.2em); /* Responsive font size */
+            font-size: clamp(2.8em, 6vw, 4.2em);
             font-weight: 800;
             line-height: 1.2;
             margin-bottom: 20px;
             color: var(--text-color-dark);
         }
-        .hero h1 .highlight {
+        .hero h1 .highlight { /* Highlight with primary accent */
             color: var(--primary-accent);
         }
         .hero p.subtitle {
@@ -146,8 +156,8 @@
             gap: 15px;
             flex-wrap: wrap;
         }
-        .hero-image-placeholder { /* Placeholder for the Dribbble-style central image */
-            background: #e9f0e9; /* Light green tint */
+        .hero-image-placeholder {
+            background: var(--pastel-yellow); /* Use one of the pastels */
             width: 80%;
             max-width: 450px;
             height: 300px;
@@ -163,18 +173,18 @@
             z-index: 2;
         }
 
-        /* Background Blobs (Simple CSS version) */
+        /* Background Blobs - More Colorful */
         .blob {
             position: absolute;
-            background-color: var(--primary-accent);
-            opacity: 0.08; /* Very subtle */
+            opacity: 0.5; /* Make them a bit more visible */
             border-radius: 50%;
             z-index: 1;
-            pointer-events: none; /* So they don't interfere with clicks */
+            pointer-events: none;
         }
-        .blob1 { width: 400px; height: 400px; top: -10%; left: -15%; }
-        .blob2 { width: 300px; height: 300px; bottom: -5%; right: -10%; opacity: 0.1; }
-        .blob3 { display: none; } /* Add more for complexity if needed */
+        .blob1 { background-color: var(--pastel-blue); width: 400px; height: 400px; top: -10%; left: -15%; opacity: 0.4;}
+        .blob2 { background-color: var(--pastel-green); width: 300px; height: 300px; bottom: -5%; right: -10%; opacity: 0.5;}
+        .blob3 { background-color: var(--pastel-pink); width: 250px; height: 250px; top: 20%; right: 5%; display: block; opacity: 0.3;}
+        .blob4 { background-color: var(--pastel-lavender); width: 350px; height: 350px; bottom: 25%; left: 0%; display: block; opacity: 0.35;}
 
 
         /* General Section Styling */
@@ -186,7 +196,7 @@
             margin-bottom: 60px;
         }
         .section-header .kicker {
-            color: var(--primary-accent);
+            color: var(--primary-accent); /* Main accent for kicker */
             font-weight: 600;
             margin-bottom: 8px;
             font-size: 0.95em;
@@ -220,16 +230,19 @@
             box-shadow: 0 8px 25px var(--shadow-color);
             text-align: left;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-left: 5px solid var(--pastel-green); /* Example: Use a pastel for card accent */
         }
+        .feature-card:nth-child(2) { border-left-color: var(--pastel-blue); }
+        .feature-card:nth-child(3) { border-left-color: var(--pastel-pink); }
+
         .feature-card:hover {
             transform: translateY(-6px);
-            box-shadow: 0 12px 35px rgba(61, 64, 91, 0.12);
+            box-shadow: 0 12px 35px rgba(74, 85, 104, 0.12);
         }
-        .feature-card .icon { /* Placeholder for icon */
+        .feature-card .icon {
             font-size: 2.2em;
-            color: var(--primary-accent);
+            color: var(--primary-accent); /* Main accent for icon */
             margin-bottom: 15px;
-            /* E.g., replace with <img src="icon.svg"> */
         }
         .feature-card h3 {
             font-family: var(--font-heading);
@@ -250,19 +263,24 @@
             align-items: center;
             gap: 40px;
             margin-bottom: 60px;
+            padding: 30px;
+            border-radius: 16px;
         }
+        .indonesian-context-item:nth-child(odd) { background-color: var(--pastel-yellow); } /* Alternating pastel backgrounds */
+        .indonesian-context-item:nth-child(even) { background-color: var(--pastel-lavender); }
+
+
         .indonesian-context-item:last-child { margin-bottom: 0; }
         .indonesian-context-item .text-content { flex: 1; }
         .indonesian-context-item .image-content {
             flex: 1;
             max-width: 450px;
             height: 320px;
-            background-color: #e9f0e9; /* Placeholder background */
+            background-color: var(--card-bg); /* White placeholder bg to contrast section bg */
             border-radius: 16px;
             box-shadow: 0 8px 25px var(--shadow-color);
             display: flex; align-items: center; justify-content: center; font-style:italic; color: var(--text-color-medium);
         }
-        /* Alternating order */
         .indonesian-context-item:nth-child(even) .text-content { order: 2; }
         .indonesian-context-item:nth-child(even) .image-content { order: 1; }
 
@@ -289,19 +307,24 @@
             margin-top: 20px;
         }
         .category-chip {
-            background-color: var(--card-bg);
-            color: var(--text-color-medium);
+            color: var(--text-color-dark); /* Darker text for readability on light pastels */
             padding: 10px 20px;
             border-radius: 25px;
             font-size: 0.9em;
             font-weight: 500;
-            border: 1px solid var(--border-color);
-            transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+            border: 1px solid transparent; /* Remove border initially or make it match bg */
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
+        /* Assign different pastel backgrounds to chips */
+        .category-chip:nth-child(5n+1) { background-color: var(--pastel-blue); }
+        .category-chip:nth-child(5n+2) { background-color: var(--pastel-green); }
+        .category-chip:nth-child(5n+3) { background-color: var(--pastel-yellow); }
+        .category-chip:nth-child(5n+4) { background-color: var(--pastel-pink); }
+        .category-chip:nth-child(5n+0) { background-color: var(--pastel-lavender); }
+
         .category-chip:hover {
-            background-color: var(--primary-accent);
-            color: var(--card-bg);
-            border-color: var(--primary-accent);
+            transform: scale(1.05);
+            box-shadow: 0 4px 10px var(--shadow-color);
         }
         .update-info {
             text-align: center;
@@ -313,11 +336,19 @@
 
         /* CTA & Countdown Section */
         #download-cta {
-            background-color: #f5f8f5; /* Slightly different light bg */
-            border-radius: 20px; /* Dribbble often uses rounded sections */
-            margin: 40px auto; /* Give it some space */
-            padding-top: 60px; padding-bottom: 60px; /* Adjust padding */
+            background-color: var(--pastel-blue); /* Use a prominent pastel */
+            border-radius: 20px; 
+            margin: 40px auto;
+            padding-top: 60px; padding-bottom: 60px;
         }
+        #download-cta .section-header .kicker,
+        #download-cta .section-header .title,
+        #download-cta .section-header .subtitle {
+            color: var(--text-color-dark); /* Ensure readability on pastel background */
+        }
+        #download-cta .section-header .kicker { color: var(--primary-accent); }
+
+
         .countdown-timer {
             display: flex;
             justify-content: center;
@@ -338,7 +369,7 @@
             font-family: var(--font-heading);
             font-size: clamp(1.5em, 4vw, 2em);
             font-weight: 700;
-            color: var(--primary-accent);
+            color: var(--primary-accent); /* Main accent for time value */
             line-height: 1;
         }
         .countdown-timer .time-label {
@@ -355,6 +386,7 @@
             padding: 60px 0 30px;
             border-top: 1px solid var(--border-color);
             margin-top: 80px;
+            background-color: var(--pastel-yellow); /* Light pastel for footer bg */
         }
         .footer-content {
             display: grid;
@@ -366,7 +398,7 @@
             font-family: var(--font-heading);
             font-size: 1.2em;
             font-weight: 700;
-            color: var(--text-color-dark);
+            color: var(--primary-accent); /* Use accent for footer titles */
             margin-bottom: 15px;
         }
         .footer-column ul {
@@ -381,11 +413,10 @@
             transition: color 0.3s ease;
         }
         .footer-column ul a:hover {
-            color: var(--primary-accent);
+            color: var(--primary-accent-darker);
         }
         .footer-socials a {
             margin-right: 12px;
-            /* Add SVG icons here */
             color: var(--text-color-medium);
             font-size: 1.3em;
         }
@@ -409,8 +440,8 @@
         }
 
         @media (max-width: 768px) {
-            .nav-links { display: none; /* Basic: hide for mobile, needs JS for burger */ }
-            .nav-cta .btn { display: none; /* Or style differently for mobile */ }
+            .nav-links { display: none; }
+            .nav-cta .btn { display: none; }
             .hero { padding: 60px 0 40px; }
             .hero h1 { font-size: 2.5em; }
             .hero p.subtitle { font-size: 1em; }
@@ -419,6 +450,7 @@
             .section-header .subtitle { font-size: 0.9em; }
             .countdown-timer .time-block { min-width: 65px; }
             .countdown-timer .time-value { font-size: 1.5em; }
+            .blob3, .blob4 {display: none;} /* Simplify blobs on smaller screens */
         }
          @media (max-width: 480px) {
             .hero h1 { font-size: 2em; }
@@ -432,6 +464,10 @@
 
     <div class="blob blob1"></div>
     <div class="blob blob2"></div>
+    <div class="blob blob3"></div>
+    <div class="blob blob4"></div>
+
+
     <nav class="navbar container">
         <div class="nav-logo"><a href="#">Amlo App</a></div>
         <ul class="nav-links">
@@ -448,8 +484,8 @@
     <header class="hero">
         <div class="container">
             <div class="hero-content">
-                <h1>Inspirasi <span class="highlight">Pose Fotografi</span> Tanpa Batas</h1>
-                <p class="subtitle">Temukan 11.000+ aset foto dengan kategori super lengkap dan referensi budaya Indonesia. Tingkatkan kreativitas fotografimu bersama Amlo App!</p>
+                <h1>Inspirasi <span class="highlight">Pose Fotografi</span> Penuh Warna!</h1>
+                <p class="subtitle">Temukan 11.000+ aset foto dengan kategori super lengkap dan referensi budaya Indonesia. Ceriakan fotografimu bersama Amlo App!</p>
                 <div class="hero-buttons">
                     <a href="#download-cta" class="btn btn-primary">Download (Android)</a>
                     <a href="#download-cta" class="btn btn-secondary">Download (iOS)</a>
@@ -457,7 +493,7 @@
             </div>
             <div class="hero-image-placeholder">
                 <p>Visual Aplikasi Amlo App Anda di sini</p>
-                </div>
+            </div>
         </div>
     </header>
 
@@ -465,20 +501,23 @@
         <div class="container">
             <div class="section-header">
                 <p class="kicker">Fitur Unggulan</p>
-                <h2 class="title">Semua yang Anda Butuhkan untuk Foto Sempurna</h2>
-                <p class="subtitle">Amlo App dirancang untuk memberikan kemudahan, inspirasi, dan relevansi dalam setiap sesi fotografi Anda.</p>
+                <h2 class="title">Semua yang Anda Butuhkan untuk Foto Ceria & Sempurna</h2>
+                <p class="subtitle">Amlo App dirancang untuk memberikan kemudahan, inspirasi, dan relevansi dalam setiap sesi fotografi Anda yang penuh warna.</p>
             </div>
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="icon">🖼️</div> <h3>11.000+ Aset Foto</h3>
+                    <div class="icon">🖼️</div>
+                    <h3>11.000+ Aset Foto</h3>
                     <p>Akses ke ribuan referensi pose fotografi berkualitas tinggi yang terus bertambah, siap menginspirasi setiap jepretan Anda.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="icon">🇮🇩</div> <h3>Konteks Budaya Indonesia</h3>
+                    <div class="icon">🇮🇩</div>
+                    <h3>Konteks Budaya Indonesia</h3>
                     <p>Referensi foto yang relevan dengan budaya dan lingkungan Indonesia, dari pakaian hingga suasana, membuatnya unik dan aplikatif.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="icon">☁️</div> <h3>Akses Drive & Update Rutin</h3>
+                    <div class="icon">☁️</div>
+                    <h3>Akses Drive & Update Rutin</h3>
                     <p>Download semua aset melalui Google Drive secara gratis. Nikmati pembaruan konten foto setiap bulan tanpa biaya tambahan.</p>
                 </div>
             </div>
@@ -489,24 +528,24 @@
         <div class="container">
             <div class="section-header">
                 <p class="kicker">Karya Lokal, Inspirasi Global</p>
-                <h2 class="title">Dirancang Khusus untuk Indonesia</h2>
+                <h2 class="title">Dirancang Khusus untuk Indonesia, dengan Sentuhan Warna!</h2>
             </div>
             <div class="indonesian-context-item">
                 <div class="text-content">
-                    <h3>Nuansa Budaya yang Kental</h3>
-                    <p>Amlo App memahami pentingnya relevansi budaya. Referensi kami menggunakan pakaian, wajah, dan lingkungan yang akrab dengan masyarakat Indonesia, membuat setiap pose terasa lebih personal dan mudah diadaptasi.</p>
+                    <h3>Nuansa Budaya yang Kental & Ceria</h3>
+                    <p>Amlo App memahami pentingnya relevansi budaya. Referensi kami menggunakan pakaian, wajah, dan lingkungan yang akrab dengan masyarakat Indonesia, kini disajikan dengan palet warna yang lebih hidup!</p>
                     <a href="#" class="btn btn-primary">Pelajari Lebih Lanjut</a>
                 </div>
                 <div class="image-content">
                     Contoh Gambar Konteks Indonesia 1
-                    </div>
+                </div>
             </div>
             <div class="indonesian-context-item">
                  <div class="image-content">
                     Contoh Gambar Konteks Indonesia 2
-                    </div>
+                </div>
                 <div class="text-content">
-                    <h3>Dari Sabang Sampai Merauke</h3>
+                    <h3>Dari Sabang Sampai Merauke, Penuh Warna</h3>
                     <p>Kami berupaya menangkap keragaman sosial dan budaya Indonesia dalam direktori kami, memberikan Anda inspirasi yang kaya dan beragam untuk berbagai jenis pemotretan di seluruh nusantara.</p>
                      <a href="#" class="btn btn-secondary">Lihat Galeri</a>
                 </div>
@@ -518,8 +557,8 @@
         <div class="container">
             <div class="section-header">
                 <p class="kicker">Untuk Setiap Momen Spesial</p>
-                <h2 class="title">Kategori Super Lengkap</h2>
-                <p class="subtitle">Apapun kebutuhan fotografimu, Amlo App menyediakan kategori yang relevan, dari acara formal hingga momen kasual sehari-hari.</p>
+                <h2 class="title">Kategori Super Lengkap & Berwarna</h2>
+                <p class="subtitle">Apapun kebutuhan fotografimu, Amlo App menyediakan kategori yang relevan, disajikan dalam tampilan yang ceria dan menyegarkan.</p>
             </div>
             <div class="categories-chips">
                 <span class="category-chip">Tunangan</span>
@@ -544,14 +583,15 @@
             <div class="section-header">
                 <p class="kicker">Jangan Tunda Lagi!</p>
                 <h2 class="title">Unduh Amlo App Sekarang Juga</h2>
-                <p class="subtitle">Manfaatkan diskon spesial launching sebelum waktu habis. Mulai perjalanan fotografimu yang lebih kreatif hari ini!</p>
+                <p class="subtitle">Manfaatkan diskon spesial launching sebelum waktu habis. Mulai perjalanan fotografimu yang lebih kreatif dan penuh warna hari ini!</p>
             </div>
             <div class="countdown-timer">
                 <div class="time-block"><span id="hours" class="time-value">00</span><span class="time-label">Jam</span></div>
                 <div class="time-block"><span id="minutes" class="time-value">00</span><span class="time-label">Menit</span></div>
                 <div class="time-block"><span id="seconds" class="time-value">00</span><span class="time-label">Detik</span></div>
             </div>
-            <div class="hero-buttons" style="margin-top: 20px;"> <a href="YOUR_ANDROID_APP_LINK_HERE" class="btn btn-primary" target="_blank">Unduh (Android)</a>
+            <div class="hero-buttons" style="margin-top: 20px;">
+                <a href="YOUR_ANDROID_APP_LINK_HERE" class="btn btn-primary" target="_blank">Unduh (Android)</a>
                 <a href="YOUR_IOS_APP_LINK_HERE" class="btn btn-secondary" target="_blank">Unduh (iOS)</a>
             </div>
         </div>
@@ -585,7 +625,7 @@
                     <h4>Hubungi Kami</h4>
                     <ul>
                         <li><a href="mailto:amlo.apps@gmail.com">amlo.apps@gmail.com</a></li>
-                        </ul>
+                    </ul>
                     <div class="footer-socials">
                         </div>
                 </div>
@@ -632,8 +672,7 @@
         }
 
         // SET YOUR TARGET DATE FOR THE COUNTDOWN HERE!
-        // For testing, let's set it to expire soon relative to May 30, 2025 (current time)
-        // Example: Set it to expire on May 31, 2025, at 23:59:59
+        // Example: Set it to expire on May 31, 2025, at 23:59:59 (relative to May 30, 2025)
         const discountEndDate = new Date("May 31, 2025 23:59:59").getTime();
         startCountdown(discountEndDate);
 
@@ -650,14 +689,15 @@
                 }
             });
         });
-        // Active Nav Link highlighting (simple version based on scroll, needs improvement for accuracy)
+        
+        // Active Nav Link highlighting
         const sections = document.querySelectorAll("section[id]");
         const navLi = document.querySelectorAll(".nav-links a");
         window.onscroll = () => {
           var current = "";
           sections.forEach((section) => {
             const sectionTop = section.offsetTop;
-            if (pageYOffset >= sectionTop - 60) { // 60 is approx navbar height
+            if (pageYOffset >= sectionTop - 70) { // Adjusted offset
               current = section.getAttribute("id");
             }
           });
@@ -669,7 +709,6 @@
             }
           });
         };
-
 
         // Set current year in footer
         document.getElementById('currentYear').textContent = new Date().getFullYear();
