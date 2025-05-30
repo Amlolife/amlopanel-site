@@ -3,381 +3,473 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amlo App - Referensi Pose Fotografi</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <title>Amlo App - Revolusi Pose Fotografi Indonesia</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-color: #007AFF; /* Professional Blue */
-            --secondary-color: #0056b3;
-            --text-color: #333333;
-            --light-text-color: #ffffff;
-            --background-color: #FFFFFF;
-            --light-gray-background: #f8f9fa;
-            --dark-gray: #4A4A4A;
-            --border-color: #e0e0e0;
+            --primary-color: #E94F37; /* A vibrant, confident Coral/Orange */
+            --primary-hover: #C73E27;
+            --secondary-color: #393E46; /* Dark Slate Gray */
+            --background-color: #222831; /* Very Dark Desaturated Blue/Gray */
+            --text-color: #EEEEEE; /* Light Gray/Off-White */
+            --text-muted-color: #adb5bd;
+            --card-background: rgba(57, 62, 70, 0.7); /* Semi-transparent card */
+            --glass-blur: 10px;
+            --border-color: rgba(238, 238, 238, 0.1);
+            --font-heading: 'Syne', sans-serif;
+            --font-body: 'Manrope', sans-serif;
+        }
+
+        ::selection {
+            background-color: var(--primary-color);
+            color: var(--text-color);
         }
 
         body {
-            font-family: 'Roboto', sans-serif;
+            font-family: var(--font-body);
             margin: 0;
             padding: 0;
             color: var(--text-color);
             background-color: var(--background-color);
-            line-height: 1.6;
+            line-height: 1.7;
+            overflow-x: hidden; /* Prevent horizontal scroll */
         }
 
         .container {
             width: 90%;
-            max-width: 1100px;
+            max-width: 1140px;
             margin: 0 auto;
-            padding: 20px 0;
+            padding: 40px 0;
         }
 
-        /* Header / Hero Section */
+        /* Helper for section titles */
+        .section-kicker {
+            font-size: 0.9em;
+            font-weight: 700;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: clamp(2.2em, 5vw, 3.5em); /* Responsive font size */
+            color: var(--text-color);
+            margin-bottom: 15px;
+            font-weight: 800;
+            line-height: 1.2;
+        }
+        .section-subtitle {
+            font-size: clamp(1em, 2.5vw, 1.15em);
+            color: var(--text-muted-color);
+            margin-bottom: 50px;
+            max-width: 650px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+
+        /* Hero Section */
         .hero {
-            background: linear-gradient(135deg, var(--primary-color) 0%, #0056b3 100%);
-            color: var(--light-text-color);
-            padding: 80px 20px;
+            position: relative;
+            background: linear-gradient(160deg, var(--background-color) 60%, var(--secondary-color) 100%);
+            padding: 100px 20px 80px;
             text-align: center;
+            overflow: hidden;
+        }
+        /* Decorative elements for hero (optional) */
+        .hero::before, .hero::after {
+            content: '';
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.05;
+            z-index: 0;
+        }
+        .hero::before {
+            width: 400px;
+            height: 400px;
+            background: var(--primary-color);
+            top: -100px; left: -150px;
+        }
+        .hero::after {
+            width: 300px;
+            height: 300px;
+            background: var(--text-color);
+            bottom: -120px; right: -100px;
+            opacity: 0.03;
+        }
+
+        .hero .container {
+            position: relative;
+            z-index: 1;
         }
 
         .hero h1 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.8em;
-            margin-bottom: 15px;
-            font-weight: 700;
+            font-family: var(--font-heading);
+            font-size: clamp(2.8em, 7vw, 4.8em);
+            margin-bottom: 20px;
+            font-weight: 800;
+            line-height: 1.1;
+            letter-spacing: -1px;
+            color: var(--text-color);
+        }
+         .hero h1 .highlight {
+            color: var(--primary-color);
         }
 
         .hero p.subtitle {
-            font-size: 1.1em;
-            margin-bottom: 30px;
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0.9;
+            font-size: clamp(1.1em, 3vw, 1.3em);
+            margin-bottom: 40px;
+            max-width: 750px;
+            color: var(--text-muted-color);
         }
 
         .app-buttons {
-            margin-top: 20px;
+            margin-top: 30px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         .app-button {
-            display: inline-block;
-            background-color: var(--light-text-color);
-            color: var(--primary-color);
-            padding: 12px 25px;
-            margin: 10px;
-            border-radius: 8px;
+            display: inline-flex; /* For icon alignment */
+            align-items: center;
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            padding: 15px 30px;
+            border-radius: 50px; /* Pill shape */
             text-decoration: none;
-            font-weight: 600;
-            font-family: 'Poppins', sans-serif;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        .app-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 15px rgba(0,0,0,0.15);
-        }
-
-        .app-button.ios {
-            /* Add specific iOS styling or icon if needed */
-        }
-        .app-button.android {
-            /* Add specific Android styling or icon if needed */
-        }
-
-        /* Section Styling */
-        .section {
-            padding: 60px 20px;
-            text-align: center;
-        }
-
-        .section.bg-light {
-            background-color: var(--light-gray-background);
-        }
-
-        .section-title {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.2em;
-            color: var(--dark-gray);
-            margin-bottom: 15px;
-            font-weight: 600;
-        }
-
-        .section-subtitle {
+            font-weight: 700;
+            font-family: var(--font-body);
+            transition: background-color 0.3s ease, transform 0.2s ease;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.2);
             font-size: 1em;
-            color: #666;
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+        }
+        .app-button:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-3px) scale(1.02);
+        }
+        .app-button.secondary {
+            background-color: transparent;
+            border: 2px solid var(--primary-color);
+            color: var(--primary-color);
+        }
+        .app-button.secondary:hover {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+        }
+        .app-button svg { /* For potential inline SVG icons */
+            margin-right: 8px;
+            width: 20px;
+            height: 20px;
         }
 
-        /* Features Grid */
+        /* General Section Styling */
+        .section {
+            padding: 80px 20px;
+            text-align: center;
+            position: relative;
+            overflow: hidden; /* For potential background elements */
+        }
+        .section.bg-offset { /* Slightly different background for variation */
+            background-color: var(--secondary-color);
+        }
+
+
+        /* Features Section - Glassmorphism Cards */
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
             text-align: left;
-            margin-top: 40px;
+            margin-top: 60px;
         }
-
         .feature-item {
-            background-color: var(--background-color);
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            background: var(--card-background);
+            backdrop-filter: blur(var(--glass-blur));
+            -webkit-backdrop-filter: blur(var(--glass-blur));
+            padding: 30px;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.15);
         }
         .feature-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+            transform: translateY(-8px);
+            box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.25);
         }
-
-        .feature-item h3 {
-            font-family: 'Poppins', sans-serif;
-            font-size: 1.4em;
+        .feature-item .icon-placeholder {
+            font-size: 2em;
             color: var(--primary-color);
+            margin-bottom: 15px;
+            /* Replace with actual icons - e.g., <img src="icon.svg"> or <i> from icon font */
+        }
+        .feature-item h3 {
+            font-family: var(--font-heading);
+            font-size: 1.6em;
+            color: var(--text-color);
             margin-bottom: 10px;
         }
-        /* Placeholder for feature icons */
-        .feature-item .icon-placeholder {
-            width: 50px;
-            height: 50px;
-            background-color: #e0e0e0;
-            border-radius: 50%;
-            margin-bottom: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5em;
-            color: var(--primary-color);
+        .feature-item p {
+            color: var(--text-muted-color);
+            font-size: 0.95em;
+        }
+
+        /* Indonesian Context Section */
+        #indonesian-context {
+            background: linear-gradient(rgba(34,40,49,0.85), rgba(34,40,49,0.85)), url('https://images.unsplash.com/photo-1558005750-282347327978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1500&q=80') no-repeat center center; /* Replace with a relevant, high-quality placeholder */
+            background-size: cover;
+            background-attachment: fixed; /* Parallax effect */
+        }
+        #indonesian-context .section-title, #indonesian-context .section-subtitle {
+            color: var(--text-color);
+        }
+        #indonesian-context .section-subtitle {
+            color: var(--text-muted-color);
+            font-weight: 500;
+        }
+        .indonesia-showcase-img { /* Placeholder for an actual image */
+            max-width: 400px;
+            border-radius: 10px;
+            margin-top: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
         }
 
 
         /* Categories Section */
-        .categories-list {
+        .categories-showcase {
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 15px;
-            margin-top: 20px;
+            margin-top: 40px;
         }
-
-        .category-tag {
-            background-color: var(--primary-color);
-            color: var(--light-text-color);
-            padding: 8px 15px;
-            border-radius: 20px;
-            font-size: 0.9em;
+        .category-chip {
+            background-color: var(--secondary-color);
+            color: var(--text-muted-color);
+            padding: 10px 20px;
+            border-radius: 25px;
+            font-size: 0.95em;
             font-weight: 500;
+            border: 1px solid var(--border-color);
+            transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
         }
-
-        /* Image Placeholder Styling */
-        .image-placeholder-container {
-            margin: 30px auto;
-            max-width: 600px;
-            background-color: #e9ecef;
-            border-radius: 8px;
-            padding: 20px;
-            text-align: center;
-            color: #6c757d;
+        .category-chip:hover {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            border-color: var(--primary-color);
+            transform: scale(1.05);
         }
-        .image-placeholder-container p {
-            margin:0; font-size: 0.9em;
-        }
-        .image-placeholder-container.indonesia-ref {
-             /* Add styling for a specific image if needed */
+        .update-info {
+            margin-top: 30px;
+            font-style: italic;
+            color: var(--text-muted-color);
         }
 
 
-        /* Call to Action Section */
-        .cta-section {
-            background-color: var(--dark-gray);
-            color: var(--light-text-color);
+        /* Call to Action & Countdown */
+        #download-cta {
+            background: linear-gradient(180deg, var(--secondary-color) 0%, var(--background-color) 100%);
         }
-
-        .cta-section .section-title, .cta-section .section-subtitle {
-            color: var(--light-text-color);
-        }
-        .cta-section .section-subtitle {
-            opacity: 0.8;
-        }
-
         .countdown-timer {
-            margin: 30px 0;
+            margin: 40px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap;
         }
-
-        .countdown-timer span {
-            font-family: 'Poppins', sans-serif;
-            font-size: 2.5em;
+        .countdown-timer .time-block {
+            background: var(--secondary-color);
+            padding: 15px 0; /* Adjusted padding */
+            border-radius: 10px;
+            min-width: 90px; /* Ensure consistent width */
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            border: 1px solid var(--border-color);
+        }
+        .countdown-timer .time-value {
+            font-family: var(--font-heading);
+            font-size: clamp(2em, 6vw, 3em);
             font-weight: 700;
             color: var(--primary-color);
-            background-color: var(--light-text-color);
-            padding: 10px 15px;
-            border-radius: 8px;
-            margin: 0 5px;
-            min-width: 70px; /* Ensure consistent width */
-            display: inline-block;
-            text-align: center;
+            line-height: 1;
         }
-        .countdown-timer small {
+        .countdown-timer .time-label {
             display: block;
-            font-size: 0.4em;
-            color: var(--dark-gray);
-            font-weight: 400;
-            margin-top: -5px;
+            font-size: 0.75em;
+            color: var(--text-muted-color);
+            margin-top: 2px; /* Adjusted margin */
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
         }
-
 
         /* Footer */
         .footer {
-            background-color: #2c3e50; /* Darker Footer */
-            color: #bdc3c7;
+            background-color: #1A1E25; /* Even darker for footer */
+            color: var(--text-muted-color);
             text-align: center;
-            padding: 30px 20px;
+            padding: 40px 20px;
             font-size: 0.9em;
         }
-
         .footer p {
-            margin: 5px 0;
+            margin: 8px 0;
         }
-
         .footer a {
-            color: #ffffff;
+            color: var(--primary-color);
             text-decoration: none;
+            font-weight: 500;
         }
-
         .footer a:hover {
             text-decoration: underline;
         }
 
-        /* Responsive adjustments */
+        /* Responsive Adjustments */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 2.2em;
-            }
-            .hero p.subtitle {
-                font-size: 1em;
-            }
-            .section-title {
-                font-size: 1.8em;
-            }
-            .features-grid {
-                grid-template-columns: 1fr; /* Stack features on smaller screens */
-            }
-            .countdown-timer span {
-                font-size: 1.8em;
-                padding: 8px 10px;
-                min-width: 50px;
-            }
+            .hero { padding: 80px 20px 60px; }
+            .hero h1 { font-size: 2.8em; }
+            .hero p.subtitle { font-size: 1.1em; }
+            .section-title { font-size: 2em; }
+            .section-subtitle { font-size: 1em; }
+            .features-grid { grid-template-columns: 1fr; }
+            .countdown-timer .time-block { min-width: 75px; }
+            .countdown-timer .time-value { font-size: 2em; }
         }
         @media (max-width: 480px) {
+            .hero h1 { font-size: 2.2em; }
+            .hero p.subtitle { font-size: 1em; }
             .app-button {
-                display: block;
-                width: 80%;
-                margin: 10px auto;
-            }
-             .hero h1 {
-                font-size: 1.8em;
-            }
-            .hero p.subtitle {
+                padding: 12px 25px;
                 font-size: 0.9em;
+                width: 100%; /* Full width buttons on small screens */
             }
-            .countdown-timer span {
+             .app-buttons {
+                flex-direction: column; /* Stack buttons */
+                width: 80%;
+                margin-left: auto;
+                margin-right: auto;
+            }
+            .countdown-timer {
+                gap: 5px;
+            }
+            .countdown-timer .time-block {
+                min-width: 60px;
+                padding: 10px 0;
+            }
+             .countdown-timer .time-value {
                 font-size: 1.5em;
             }
+            .countdown-timer .time-label {
+                font-size: 0.65em;
+            }
         }
-
     </style>
 </head>
 <body>
 
     <header class="hero">
         <div class="container">
-            <h1>Amlo App</h1>
-            <p class="subtitle">Aplikasi Amlo dilengkapi dengan lebih dari 11.000 Aset Foto dengan fokus utama Pose Fotografi.</p>
+            <h1>Amlo App: <span class="highlight">Pose Fotografi</span> Terbaik Indonesia</h1>
+            <p class="subtitle">Lebih dari 11.000 aset foto, kategori super lengkap, dan referensi budaya Indonesia. Tingkatkan kualitas fotografimu sekarang!</p>
             <div class="app-buttons">
-                <a href="#download" class="app-button android">Download for Android</a>
-                <a href="#download" class="app-button ios">Download for iOS</a>
+                <a href="#download-cta" class="app-button">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.25 8.75h-3.5v-2.5h3.5v2.5zm-5.5 0h-3.5v-2.5h3.5v2.5zm-2.25 11.5c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25zm4.5 0c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25zm3.5-11.5h-3.5v-2.5h3.5v2.5zm-12.5 3h12.5v-1.25c0-.69-.56-1.25-1.25-1.25h-10c-.69 0-1.25.56-1.25 1.25v1.25zm0 8.25v-6.5h12.5v6.5c0 .69-.56 1.25-1.25 1.25h-10c-.69 0-1.25-.56-1.25-1.25zM6.75 6.25h-1.5L4.5 3.5h2.25V1H4.5C3.125 1 2 2.125 2 3.5v17C2 21.875 3.125 23 4.5 23h15c1.375 0 2.5-1.125 2.5-2.5V3.5c0-1.375-1.125-2.5-2.5-2.5h-2.25v2.5H17.5l.75 2.75h-1.5v2.5H17.25v-2.5H11.75v2.5H9.5V6.25h1.75v-2.5H9.5V1H6.75v2.5z"/></svg>
+                    Download (Android)
+                </a>
+                <a href="#download-cta" class="app-button secondary">
+                     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59,16.41C18.87,17.62 17.9,18.75 16.61,18.75C15.25,18.75 14.81,17.93 13.88,17.93C12.94,17.93 12.5,18.75 11.16,18.75C9.82,18.75 8.83,17.62 8.14,16.41C7.03,14.45 6.75,11.73 7.71,9.53C8.46,7.8 9.94,6.75 11.63,6.75C12.94,6.75 13.7,7.5 14.38,7.5C15.03,7.5 16.03,6.75 17.39,6.75C19.03,6.75 20.44,7.84 21.22,9.53C21.6,10.47 21.73,11.41 21.73,12.34C21.74,12.59 21.73,12.85 21.71,13.11C21.25,15.09 20.36,16.09 19.59,16.41M14.41,4.5C15.06,3.86 15.5,2.97 15.39,2.04C14.5,2.14 13.63,2.62 13,3.27C12.39,3.88 11.91,4.78 12,5.75C12.94,5.7 13.78,5.13 14.41,4.5Z"/></svg>
+                    Download (iOS)
+                </a>
             </div>
         </div>
     </header>
 
     <section id="features" class="section">
         <div class="container">
-            <h2 class="section-title">Fitur Unggulan Amlo App</h2>
-            <p class="section-subtitle">Temukan berbagai kemudahan dan kekayaan konten dalam Amlo App untuk kebutuhan fotografi Anda.</p>
+            <p class="section-kicker">Fitur Unggulan</p>
+            <h2 class="section-title">Mengapa Amlo App Pilihan Terbaik?</h2>
+            <p class="section-subtitle">Dirancang untuk kemudahan dan inspirasi tak terbatas bagi para fotografer di Indonesia.</p>
             <div class="features-grid">
                 <div class="feature-item">
-                    <h3>Kategori Super Lengkap</h3>
-                    <p>Mencakup Relationship (Tunangan, Pre-Wedding, Wedding, Couple), Modelling, Wisuda, Corporate, bahkan New Born Photography. Update berkala dilakukan per bulan untuk menambah aset foto.</p>
+                    <div class="icon-placeholder">✨</div>
+                    <h3>11.000+ Aset Foto</h3>
+                    <p>Akses ke ribuan referensi pose fotografi berkualitas tinggi yang terus bertambah, siap menginspirasi setiap jepretan Anda.</p>
                 </div>
                 <div class="feature-item">
-                    <h3>Referensi Foto Indonesia</h3>
-                    <p>Direktori Budaya dan Social Culture Indonesia menjadi acuan, sehingga referensi foto menggunakan personality Indonesia (pakaian, wajah, lingkungan).</p>
+                    <div class="icon-placeholder">🇮🇩</div>
+                    <h3>Konteks Budaya Indonesia</h3>
+                    <p>Referensi foto yang relevan dengan budaya dan lingkungan Indonesia, dari pakaian hingga suasana, membuatnya unik dan aplikatif.</p>
                 </div>
                 <div class="feature-item">
-                    <h3>Link Drive Gratis & Update</h3>
-                    <p>Akses Link Drive bebas untuk download 11.000+ aset Amlo App. Konten akan terus diupdate secara berkala untuk Anda.</p>
+                    <div class="icon-placeholder">💾</div>
+                    <h3>Akses Drive & Update Rutin</h3>
+                    <p>Download semua aset melalui Google Drive secara gratis. Nikmati pembaruan konten foto setiap bulan tanpa biaya tambahan.</p>
                 </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="categories" class="section bg-light">
-        <div class="container">
-            <h2 class="section-title">Kategori untuk Setiap Momen</h2>
-            <p class="section-subtitle">Dari momen spesial hingga kebutuhan profesional, temukan inspirasi pose yang tepat.</p>
-            <div class="categories-list">
-                <span class="category-tag">Tunangan</span>
-                <span class="category-tag">Pre-Wedding</span>
-                <span class="category-tag">Wedding</span>
-                <span class="category-tag">Couple</span>
-                <span class="category-tag">Modelling</span>
-                <span class="category-tag">Wisuda</span>
-                <span class="category-tag">Corporate</span>
-                <span class="category-tag">New Born</span>
-            </div>
-            <div class="image-placeholder-container" style="margin-top:40px;">
-                <p><em>Anda bisa menambahkan kolase gambar contoh kategori di sini.</em></p>
             </div>
         </div>
     </section>
 
     <section id="indonesian-context" class="section">
         <div class="container">
-            <h2 class="section-title">Dibuat untuk Konteks Indonesia</h2>
-            <p class="section-subtitle">Referensi foto di dalam Amlo App menggunakan direktori Budaya Indonesia dan Social Culture Indonesia, sehingga hampir seluruh Referensi foto menggunakan personality Indonesia (pakaian, wajah, lingkungan).</p>
-            <div class="image-placeholder-container indonesia-ref">
-                 <p><em>Tempatkan gambar yang merepresentasikan budaya atau social culture Indonesia di sini.</em></p>
+            <p class="section-kicker">Karya Anak Bangsa</p>
+            <h2 class="section-title">Referensi Foto Bernuansa Indonesia</h2>
+            <p class="section-subtitle">Kami bangga menyajikan direktori pose yang mengangkat keindahan dan keragaman budaya serta sosial Indonesia. Setiap referensi dirancang agar terasa dekat dan relevan bagi Anda.</p>
             </div>
+    </section>
+
+    <section id="categories" class="section bg-offset">
+        <div class="container">
+            <p class="section-kicker">Untuk Setiap Momen</p>
+            <h2 class="section-title">Kategori Super Lengkap</h2>
+            <p class="section-subtitle">Dari acara formal hingga momen kasual, temukan inspirasi pose yang sempurna untuk setiap kebutuhan fotografi Anda.</p>
+            <div class="categories-showcase">
+                <span class="category-chip">Tunangan</span>
+                <span class="category-chip">Pre-Wedding</span>
+                <span class="category-chip">Wedding</span>
+                <span class="category-chip">Couple</span>
+                <span class="category-chip">Modelling</span>
+                <span class="category-chip">Wisuda</span>
+                <span class="category-chip">Corporate</span>
+                <span class="category-chip">New Born</span>
+                <span class="category-chip">Keluarga</span>
+                <span class="category-chip">Produk</span>
+            </div>
+            <p class="update-info">Update berkala akan dilakukan per bulan dengan menambah aset foto menjadi lebih lengkap.</p>
         </div>
     </section>
 
-
-    <section id="download" class="section cta-section">
+    <section id="download-cta" class="section">
         <div class="container">
-            <h2 class="section-title">Download Dibawah Ini</h2>
-            <p class="section-subtitle">Jangan lewatkan penawaran spesial! Diskon Launching Tersisa:</p>
+            <p class="section-kicker">Jangan Sampai Ketinggalan!</p>
+            <h2 class="section-title">Download Amlo App Sekarang!</h2>
+            <p class="section-subtitle">Manfaatkan diskon spesial launching sebelum waktu habis. Revolusi pose fotografimu dimulai di sini.</p>
             <div class="countdown-timer">
-                <span id="hours">00<small>Jam</small></span> :
-                <span id="minutes">00<small>Menit</small></span> :
-                <span id="seconds">00<small>Detik</small></span>
+                <div class="time-block"><span id="hours" class="time-value">00</span><span class="time-label">Jam</span></div>
+                <div class="time-block"><span id="minutes" class="time-value">00</span><span class="time-label">Menit</span></div>
+                <div class="time-block"><span id="seconds" class="time-value">00</span><span class="time-label">Detik</span></div>
             </div>
             <div class="app-buttons">
-                <a href="YOUR_ANDROID_APP_LINK_HERE" class="app-button android" target="_blank">Download for Android</a>
-                <a href="YOUR_IOS_APP_LINK_HERE" class="app-button ios" target="_blank">Download for iOS</a>
+                <a href="YOUR_ANDROID_APP_LINK_HERE" class="app-button" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.25 8.75h-3.5v-2.5h3.5v2.5zm-5.5 0h-3.5v-2.5h3.5v2.5zm-2.25 11.5c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25zm4.5 0c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25zm3.5-11.5h-3.5v-2.5h3.5v2.5zm-12.5 3h12.5v-1.25c0-.69-.56-1.25-1.25-1.25h-10c-.69 0-1.25.56-1.25 1.25v1.25zm0 8.25v-6.5h12.5v6.5c0 .69-.56 1.25-1.25 1.25h-10c-.69 0-1.25-.56-1.25-1.25zM6.75 6.25h-1.5L4.5 3.5h2.25V1H4.5C3.125 1 2 2.125 2 3.5v17C2 21.875 3.125 23 4.5 23h15c1.375 0 2.5-1.125 2.5-2.5V3.5c0-1.375-1.125-2.5-2.5-2.5h-2.25v2.5H17.5l.75 2.75h-1.5v2.5H17.25v-2.5H11.75v2.5H9.5V6.25h1.75v-2.5H9.5V1H6.75v2.5z"/></svg>
+                    Unduh untuk Android
+                </a>
+                <a href="YOUR_IOS_APP_LINK_HERE" class="app-button secondary" target="_blank">
+                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59,16.41C18.87,17.62 17.9,18.75 16.61,18.75C15.25,18.75 14.81,17.93 13.88,17.93C12.94,17.93 12.5,18.75 11.16,18.75C9.82,18.75 8.83,17.62 8.14,16.41C7.03,14.45 6.75,11.73 7.71,9.53C8.46,7.8 9.94,6.75 11.63,6.75C12.94,6.75 13.7,7.5 14.38,7.5C15.03,7.5 16.03,6.75 17.39,6.75C19.03,6.75 20.44,7.84 21.22,9.53C21.6,10.47 21.73,11.41 21.73,12.34C21.74,12.59 21.73,12.85 21.71,13.11C21.25,15.09 20.36,16.09 19.59,16.41M14.41,4.5C15.06,3.86 15.5,2.97 15.39,2.04C14.5,2.14 13.63,2.62 13,3.27C12.39,3.88 11.91,4.78 12,5.75C12.94,5.7 13.78,5.13 14.41,4.5Z"/></svg>
+                    Unduh untuk iOS
+                </a>
             </div>
         </div>
     </section>
 
     <footer class="footer">
         <div class="container">
-            <p>© Amlolife. All rights reserved.</p>
-            <p>Made with <a href="https://carrd.co/" target="_blank" rel="noopener">Carrd</a> (atau sesuaikan jika perlu)</p>
-            </div>
+            <p>© <span id="currentYear"></span> Amlolife. All rights reserved.</p>
+            <p>Amlo App - Inspirasi Pose Fotografi Indonesia</p>
+            <p>Made with dedication (You can remove or change "Made with Carrd")</p>
+        </div>
     </footer>
 
     <script>
@@ -397,11 +489,10 @@
                 const distance = targetDate - now;
 
                 if (distance < 0) {
-                    countdownElementHours.innerHTML = "00<small>Jam</small>";
-                    countdownElementMinutes.innerHTML = "00<small>Menit</small>";
-                    countdownElementSeconds.innerHTML = "00<small>Detik</small>";
+                    countdownElementHours.textContent = "00";
+                    countdownElementMinutes.textContent = "00";
+                    countdownElementSeconds.textContent = "00";
                     clearInterval(interval);
-                    // Optionally, you can hide the timer or show a "discount ended" message
                     return;
                 }
 
@@ -409,42 +500,42 @@
                 const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
                 const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                countdownElementHours.innerHTML = String(hours).padStart(2, '0') + "<small>Jam</small>";
-                countdownElementMinutes.innerHTML = String(minutes).padStart(2, '0') + "<small>Menit</small>";
-                countdownElementSeconds.innerHTML = String(seconds).padStart(2, '0') + "<small>Detik</small>";
+                countdownElementHours.textContent = String(hours).padStart(2, '0');
+                countdownElementMinutes.textContent = String(minutes).padStart(2, '0');
+                countdownElementSeconds.textContent = String(seconds).padStart(2, '0');
             }
-
             const interval = setInterval(updateCountdown, 1000);
-            updateCountdown(); // Initial call
+            updateCountdown();
         }
 
-        // Set your target date for the countdown here
-        // Example: December 31, 2025 at 23:59:59
-        // const discountEndDate = new Date("Dec 31, 2025 23:59:59").getTime();
+        // SET YOUR TARGET DATE FOR THE COUNTDOWN HERE!
+        // Example: Launch ends in 7 days from now
+        // const discountEndDate = new Date().getTime() + (7 * 24 * 60 * 60 * 1000);
 
-        // Example: Countdown for 24 hours from now
-        // const discountEndDate = new Date().getTime() + (24 * 60 * 60 * 1000);
+        // For demonstration, setting it to 1 hour from now:
+        // const discountEndDate = new Date().getTime() + (1 * 60 * 60 * 1000);
 
-        // IF THE DISCOUNT IS OVER, or you want to show 00:00:00:
-        const discountEndDate = new Date().getTime() - (1 * 60 * 60 * 1000); // Set to 1 hour ago to show 00:00:00
-
+        // IF THE DISCOUNT IS OVER, or to show 00:00:00 by default:
+        const discountEndDate = new Date("May 31, 2025 00:00:00").getTime(); // Sets it to midnight tonight (as an example if today is May 30th)
+                                                                         // Or for a past date to always show 00:00:00: new Date().getTime() - (1000 * 60 * 60)
         startCountdown(discountEndDate);
 
-        // Smooth scroll for navigation links
+        // Smooth scroll for navigation links if any were #fragment based
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const targetId = this.getAttribute('href');
-                if (targetId.length > 1) { // Ensure it's not just "#"
+                if (targetId.length > 1) {
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
-                         targetElement.scrollIntoView({
-                            behavior: 'smooth'
-                        });
+                         targetElement.scrollIntoView({ behavior: 'smooth' });
                     }
                 }
             });
         });
+
+        // Set current year in footer
+        document.getElementById('currentYear').textContent = new Date().getFullYear();
     </script>
 
 </body>
