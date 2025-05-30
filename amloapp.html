@@ -12,13 +12,14 @@
             --bg-color: #FDFCFB; /* Very light beige/off-white */
             --text-color-dark: #3D405B; /* Dark desaturated blue/purple for text */
             --text-color-medium: #7A7D91;
-            --primary-accent: #8FBC8F; /* Soft, desaturated sage green */
-            --primary-accent-darker: #70a370;
+            --primary-accent: #007074; /* NEW Main Teal Color */
+            --primary-accent-darker: #00585B; /* NEW Darker Teal */
             --card-bg: #FFFFFF;
             --border-color: #E0E0E0;
             --shadow-color: rgba(61, 64, 91, 0.08); /* Subtle shadow based on text color */
             --font-heading: 'Outfit', sans-serif;
             --font-body: 'Inter', sans-serif;
+            --placeholder-bg: #ebf5f6; /* NEW Light desaturated teal for placeholders */
         }
 
         * {
@@ -89,13 +90,13 @@
         }
         .btn-primary {
             background-color: var(--primary-accent);
-            color: var(--card-bg);
-            box-shadow: 0 4px 15px rgba(143, 188, 143, 0.3);
+            color: var(--card-bg); /* Changed to card-bg for better contrast if accent is very light */
+            box-shadow: 0 4px 15px rgba(0, 112, 116, 0.3); /* UPDATED shadow color */
         }
         .btn-primary:hover {
             background-color: var(--primary-accent-darker);
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(143, 188, 143, 0.4);
+            box-shadow: 0 6px 20px rgba(0, 112, 116, 0.4); /* UPDATED shadow color */
         }
         .btn-secondary {
             background-color: transparent;
@@ -104,7 +105,7 @@
         }
         .btn-secondary:hover {
             background-color: var(--primary-accent);
-            color: var(--card-bg);
+            color: var(--card-bg); /* Changed to card-bg for better contrast */
         }
 
 
@@ -146,8 +147,8 @@
             gap: 15px;
             flex-wrap: wrap;
         }
-        .hero-image-placeholder { /* Placeholder for the Dribbble-style central image */
-            background: #e9f0e9; /* Light green tint */
+        .hero-image-placeholder {
+            background: var(--placeholder-bg); /* UPDATED placeholder background */
             width: 80%;
             max-width: 450px;
             height: 300px;
@@ -257,7 +258,7 @@
             flex: 1;
             max-width: 450px;
             height: 320px;
-            background-color: #e9f0e9; /* Placeholder background */
+            background-color: var(--placeholder-bg); /* UPDATED Placeholder background */
             border-radius: 16px;
             box-shadow: 0 8px 25px var(--shadow-color);
             display: flex; align-items: center; justify-content: center; font-style:italic; color: var(--text-color-medium);
@@ -313,7 +314,7 @@
 
         /* CTA & Countdown Section */
         #download-cta {
-            background-color: #f5f8f5; /* Slightly different light bg */
+            background-color: #f4f7f7; /* Slightly different light bg, adjusted for teal */
             border-radius: 20px; /* Dribbble often uses rounded sections */
             margin: 40px auto; /* Give it some space */
             padding-top: 60px; padding-bottom: 60px; /* Adjust padding */
@@ -645,7 +646,7 @@
                 if (targetId.length > 1) {
                     const targetElement = document.querySelector(targetId);
                     if (targetElement) {
-                         targetElement.scrollIntoView({ behavior: 'smooth' });
+                          targetElement.scrollIntoView({ behavior: 'smooth' });
                     }
                 }
             });
