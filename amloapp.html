@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-T">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMLO Apps</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        #wrapper {
+            background-color: #1e1e1e;
+            width: 100%;
+            max-width: 500px; /* Adjust as needed, Carrd sites are often narrow */
+            margin-top: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        #main {
+            padding: 30px 20px;
+        }
+
+        .container {
+            padding: 20px 0;
+        }
+
+        h1, h2, h3 {
+            color: #ffffff;
+            margin-top: 0;
+        }
+
+        p {
+            color: #cccccc;
+            font-size: 1em;
+            line-height: 1.6;
+            margin-bottom: 1em;
+        }
+
+        .image-container {
+            margin-bottom: 20px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px; /* Optional: if images have rounded corners */
+        }
+
+        .profile-image img {
+            width: 150px; /* Adjust to match your site's profile image size */
+            height: 150px;
+            border-radius: 50%;
+            margin-bottom: 15px;
+            border: 3px solid #ffffff;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .button {
+            display: block;
+            background-color: #007bff; /* Button color from your site */
+            color: white;
+            padding: 15px 20px;
+            text-decoration: none;
+            border-radius: 25px; /* Pill-shaped buttons */
+            font-weight: bold;
+            margin: 10px auto; /* Centered buttons */
+            width: 80%; /* Adjust width as needed */
+            max-width: 300px;
+            transition: background-color 0.3s ease;
+            font-size: 0.9em;
+            border: 1px solid #007bff; /* Optional border */
+        }
+
+        .button:hover {
+            background-color: #0056b3; /* Darker shade on hover */
+        }
+
+        .button.secondary {
+            background-color: #6c757d; /* Secondary button color */
+            border-color: #6c757d;
+        }
+
+        .button.secondary:hover {
+            background-color: #5a6268;
+        }
+
+        hr {
+            border: 0;
+            height: 1px;
+            background: #444444;
+            margin: 30px 0;
+        }
+
+        .icons {
+            margin-top: 20px;
+            margin-bottom: 20px;
+        }
+
+        .icons a {
+            margin: 0 10px;
+            text-decoration: none;
+            color: #ffffff; /* Icon color */
+            font-size: 1.8em; /* Icon size */
+        }
+
+        .icons a:hover {
+            color: #007bff; /* Icon hover color */
+        }
+
+        /* Footer styling */
+        #footer {
+            background-color: #111111; /* Footer background */
+            color: #aaaaaa;
+            padding: 15px;
+            font-size: 0.8em;
+            width: 100%;
+            max-width: 500px; /* Match wrapper width */
+            box-sizing: border-box;
+        }
+
+        #footer p {
+            margin: 0;
+            color: #aaaaaa;
+        }
+
+        /* Specific styles from amloapps.carrd.co */
+        body {
+            background-color: #000000; /* Black background */
+        }
+
+        #wrapper {
+            background-color: #151515; /* Dark gray card background */
+            border-radius: 10px;
+        }
+
+        .profile-image img {
+            border-color: #333333;
+        }
+
+        h1 {
+            font-size: 1.75em; /* Approx size from site */
+            font-weight: bold; /* Carrd often uses bolder fonts for headers */
+        }
+
+        p.name-title { /* Style for "AMLO APPS" */
+             font-size: 1.125em; /* Approx size */
+             color: #ffffff;
+             margin-bottom: 5px;
+             font-weight: bold;
+        }
+        p.subtitle { /* Style for "Apps Developer based on Indonesia" */
+            font-size: 0.875em; /* Approx size */
+            color: #a0a0a0; /* Lighter gray */
+            margin-bottom: 20px;
+        }
+
+        .button {
+            background-color: #333333; /* Button color on your site */
+            border-color: #444444;
+            border-radius: 8px; /* Less rounded than pill */
+            font-size: 0.95em; /* Adjust as needed */
+        }
+
+        .button:hover {
+            background-color: #444444;
+        }
+
+        /* Add specific icon library if you use one, e.g., Font Awesome.
+           For simplicity, I'll use text placeholders or simple SVGs if needed.
+           Your site uses image icons for social links. */
+        .social-icons img {
+            width: 24px; /* Adjust size as needed */
+            height: 24px;
+            margin: 0 8px;
+            vertical-align: middle;
+        }
+        .social-icons a:hover img {
+            opacity: 0.8;
+        }
+
+        .text-block p {
+            font-size: 0.875em;
+            color: #b3b3b3;
+        }
+
+        .text-block h2 {
+            font-size: 1em;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+        .container.inner {
+            border: 1px solid #2a2a2a;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 20px;
+            background-color: #1c1c1c;
+        }
+
+        /* Footer specific to your site */
+        #footer p {
+            font-size: 0.75em;
+            color: #666666;
+        }
+        #footer a {
+            color: #888888;
+            text-decoration: none;
+        }
+        #footer a:hover {
+            color: #ffffff;
+        }
+
+    </style>
+    </head>
+<body>
+
+    <div id="wrapper">
+        <div id="main">
+            <div class="container">
+                <div class="image-container profile-image">
+                    <img src="https://amloapps.carrd.co/assets/images/image02.jpg?v=73536158" alt="AMLO Apps Profile">
+                </div>
+                <p class="name-title">AMLO APPS</p>
+                <p class="subtitle">Apps Developer based on Indonesia</p>
+
+                <hr>
+
+                <div class="buttons">
+                    <a href="https://linktr.ee/amloapps" class="button" target="_blank">
+                        <img src="https://amloapps.carrd.co/assets/images/image01.jpg?v=73536158" alt="Linktree Icon" style="width:20px; height:20px; vertical-align: middle; margin-right: 8px; border-radius: 4px;">
+                        All My Links
+                    </a>
+                    <a href="https://play.google.com/store/apps/dev?id=7203376928640680086" class="button" target="_blank">
+                        <img src="https://amloapps.carrd.co/assets/images/image04.jpg?v=73536158" alt="Google Play Icon" style="width:20px; height:20px; vertical-align: middle; margin-right: 8px; border-radius: 4px;">
+                        Google Play
+                    </a>
+                    <a href="https://appgallery.huawei.com/search?q=amlo+apps&source=appshare&subsource=C105940785" class="button" target="_blank">
+                        <img src="https://amloapps.carrd.co/assets/images/image03.jpg?v=73536158" alt="AppGallery Icon" style="width:20px; height:20px; vertical-align: middle; margin-right: 8px; border-radius: 4px;">
+                        AppGallery
+                    </a>
+                </div>
+
+                <hr>
+
+                <div class="text-block">
+                    <p>If you have any specific inquiries or require assistance related to my applications, please do not hesitate to contact me. I am always happy to help and provide support to my users.</p>
+                </div>
+
+                <div class="container inner">
+                    <h2>Contact Me</h2>
+                    <p>For support or inquiries:</p>
+                    <div class="social-icons">
+                        <a href="mailto:amlo.apps@gmail.com" target="_blank" title="Email">
+                            <img src="https://amloapps.carrd.co/assets/icons/tabler-icons/mail.svg" alt="Email">
+                        </a>
+                        <a href="https://x.com/amloPM" target="_blank" title="Twitter">
+                            <img src="https://amloapps.carrd.co/assets/icons/tabler-icons/brand-twitter.svg" alt="Twitter">
+                        </a>
+                        <a href="https://github.com/amlo66" target="_blank" title="GitHub">
+                            <img src="https://amloapps.carrd.co/assets/icons/tabler-icons/brand-github.svg" alt="GitHub">
+                        </a>
+                        <a href="https://www.youtube.com/@AMLO-PM" target="_blank" title="YouTube">
+                            <img src="https://amloapps.carrd.co/assets/icons/tabler-icons/brand-youtube.svg" alt="YouTube">
+                        </a>
+                        <a href="https://instagram.com/amlo.pm" target="_blank" title="Instagram">
+                            <img src="https://amloapps.carrd.co/assets/icons/tabler-icons/brand-instagram.svg" alt="Instagram">
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <div id="footer">
+        <p>&copy; AMLO APPS. All rights reserved.</p>
+        <p>Made with <a href="https://carrd.co" target="_blank">Carrd</a></p>
+    </div>
+
+</body>
+</html>
