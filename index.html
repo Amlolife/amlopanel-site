@@ -644,17 +644,39 @@
             });
         });
 
-        // MODIFIED Countdown Timer Logic for 6-hour repeating cycle
+        // MODIFIED Countdown Timer Logic for 6-hour repeating cycle with persistence
         const countdownContainer = document.getElementById('countdown-container');
         const buyButton = document.getElementById('buy-button');
         const buyButtonDisabled = document.getElementById('buy-button-disabled');
-        // const pricingSubtitle = document.getElementById('pricing-subtitle'); // No longer needed to change subtitle text via JS
 
-        let cycleEndTime;
+        let cycleEndTime; // Will store the timestamp of when the current 6-hour cycle ends
         const sixHoursInMs = 6 * 60 * 60 * 1000;
+        const LS_CYCLE_END_TIME_KEY = 'amloPanelPersistentCycleEndTime'; // localStorage key
 
         function startNewCycle() {
+            // console.log("Starting a new 6-hour cycle.");
             cycleEndTime = Date.now() + sixHoursInMs;
+            localStorage.setItem(LS_CYCLE_END_TIME_KEY, cycleEndTime.toString());
+        }
+
+        function initializeTimer() {
+            const storedEndTimeString = localStorage.getItem(LS_CYCLE_END_TIME_KEY);
+            if (storedEndTimeString) {
+                const storedEndTime = parseInt(storedEndTimeString, 10);
+                if (!isNaN(storedEndTime) && storedEndTime > Date.now()) {
+                    // If there's a stored end time and it's still in the future
+                    // console.log("Continuing cycle from localStorage. Ends at: " + new Date(storedEndTime));
+                    cycleEndTime = storedEndTime;
+                } else {
+                    // Stored time is invalid or in the past
+                    // console.log("Stored cycle expired or invalid.");
+                    startNewCycle();
+                }
+            } else {
+                // No stored time (first visit or localStorage cleared)
+                // console.log("No stored cycle found.");
+                startNewCycle();
+            }
         }
 
         function updateTimer() {
@@ -662,28 +684,27 @@
             let distance = cycleEndTime - now;
 
             if (distance <= 0) {
-                startNewCycle(); // Reset the timer for another 6 hours
+                // console.log("Timer reached 0, starting new cycle.");
+                startNewCycle(); // Reset the timer for another 6 hours and update localStorage
                 distance = cycleEndTime - now; // Recalculate distance for the new cycle
             }
 
-            const hours = Math.floor(distance / (1000 * 60 * 60)); // Total hours remaining in this cycle
+            const hours = Math.floor(distance / (1000 * 60 * 60));
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
             const fmt = num => num < 10 ? '0' + num : num;
             
-            // document.getElementById('days').textContent = '00'; // Days are hidden, but if shown, would be 0
             document.getElementById('hours').textContent = fmt(hours);
             document.getElementById('minutes').textContent = fmt(minutes);
             document.getElementById('seconds').textContent = fmt(seconds);
 
-            // Ensure buy button is active and countdown is visible
             buyButton.classList.remove('hidden');
-            buyButtonDisabled.classList.add('hidden'); // Keep disabled button hidden
+            buyButtonDisabled.classList.add('hidden');
             countdownContainer.classList.remove('hidden');
         }
 
-        startNewCycle(); // Initialize the first cycle
+        initializeTimer(); // Initialize or load the timer state from localStorage
         const timerInterval = setInterval(updateTimer, 1000);
         updateTimer(); // Call once to display immediately and set button states
 
@@ -726,8 +747,8 @@
         }
         setTimeout(function loop(){
             showFakeNotification(messages[Math.floor(Math.random()*messages.length)]);
-            setTimeout(loop, 20000 + Math.random()*20000);
-        }, 10000);
+            setTimeout(loop, 20000 + Math.random()*20000); // Between 20 and 40 seconds
+        }, 10000); // Start after 10 seconds
     </script>
 </body>
 </html>
