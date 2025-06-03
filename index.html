@@ -87,7 +87,7 @@
             transform: translateY(-2px);
             box-shadow: 0 8px 25px rgba(0, 201, 255, .3);
         }
-        .btn-primary.disabled {
+        .btn-primary.disabled { /* Style for disabled button if ever needed again */
             background-color: #555;
             color: #aaa;
             border-color: #555;
@@ -425,8 +425,8 @@
                 <p class="section-subtitle">Geser slider untuk melihat perbedaan retouching instan dengan satu klik.</p>
                 <div class="slider-container mt-12">
                    <img-comparison-slider>
-                       <img slot="first" src="before.jpg" alt="Before Retouch">
-                       <img slot="second" src="after.jpg" alt="After Retouch">
+                        <img slot="first" src="before.jpg" alt="Before Retouch">
+                        <img slot="second" src="after.jpg" alt="After Retouch">
                    </img-comparison-slider>
                 </div>
             </div>
@@ -503,8 +503,11 @@
         </section>
 
         <section id="harga" class="py-24 bg-secondary"> <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-                <h2 class="section-title">Launched!</h2>
-                <p id="pricing-subtitle" class="section-subtitle">Diskon 50.17% dari <span class="line-through text-red-500">Rp 299.000</span> (hanya untuk 20 pembeli pertama!)</p>
+                <h2 class="section-title">Penawaran Spesial!</h2>
+                <p id="pricing-subtitle" class="section-subtitle">
+                    Harga promo <span class="line-through text-red-500">Rp 299.000</span> sekarang hanya <strong>Rp 99.000</strong>!
+                    <br class="sm:hidden"> Penawaran berakhir dalam:
+                </p>
                 <div class="card p-8 md:p-12 max-w-lg mx-auto border-2 border-[var(--accent-color)] shadow-2xl shadow-[var(--accent-color)]/10">
                     <h3 class="text-xl font-semibold text-accent mb-2">AMLO PANEL</h3>
                     <p class="text-lg text-secondary mb-8"></p>
@@ -512,9 +515,8 @@
                         <span class="text-4xl md:text-5xl text-price">Rp 99.000</span>
                     </p>
                     <div id="countdown-container" class="mb-10">
-                        <p class="text-secondary text-lg mb-6">Penjualan Dibuka Dalam:</p>
                         <div id="countdown-timer" class="flex justify-center space-x-3 sm:space-x-6">
-                            <div><div id="days" class="timer-value">00</div><div class="timer-label">HARI</div></div>
+                            <div class="hidden"><div id="days" class="timer-value">00</div><div class="timer-label">HARI</div></div>
                             <div><div id="hours" class="timer-value">00</div><div class="timer-label">JAM</div></div>
                             <div><div id="minutes" class="timer-value">00</div><div class="timer-label">MENIT</div></div>
                             <div><div id="seconds" class="timer-value">00</div><div class="timer-label">DETIK</div></div>
@@ -530,8 +532,8 @@
                     <a id="buy-button" href="https://amlo-life.myr.id/pl/amlo-panel" target="_blank" rel="noopener noreferrer" class="btn-primary w-full text-lg py-4 hidden">
                         <ion-icon name="key-outline" class="mr-2"></ion-icon> Download Sekarang! (windows)
                     </a>
-                    <button id="buy-button-disabled" class="btn-primary disabled w-full text-lg py-4">
-                        <ion-icon name="time-outline" class="mr-2"></ion-icon> Coming Soon...
+                    <button id="buy-button-disabled" class="btn-primary disabled w-full text-lg py-4 hidden">
+                        <ion-icon name="time-outline" class="mr-2"></ion-icon> Loading Penawaran...
                     </button>
                     <p class="text-xs text-secondary mt-6">Pembayaran aman menggunakan Mayar.id.</p>
                 </div>
@@ -642,38 +644,49 @@
             });
         });
 
-        // Countdown Timer Logic
+        // MODIFIED Countdown Timer Logic for 6-hour repeating cycle
         const countdownContainer = document.getElementById('countdown-container');
         const buyButton = document.getElementById('buy-button');
         const buyButtonDisabled = document.getElementById('buy-button-disabled');
-        const pricingSubtitle = document.getElementById('pricing-subtitle');
-        const countdownDate = new Date('2025-05-27T00:00:00+07:00').getTime();
+        // const pricingSubtitle = document.getElementById('pricing-subtitle'); // No longer needed to change subtitle text via JS
+
+        let cycleEndTime;
+        const sixHoursInMs = 6 * 60 * 60 * 1000;
+
+        function startNewCycle() {
+            cycleEndTime = Date.now() + sixHoursInMs;
+        }
+
         function updateTimer() {
             const now = Date.now();
-            const distance = countdownDate - now;
+            let distance = cycleEndTime - now;
+
             if (distance <= 0) {
-                clearInterval(timerInterval);
-                countdownContainer.classList.add('hidden');
-                buyButton.classList.remove('hidden');
-                buyButtonDisabled.classList.add('hidden');
-                pricingSubtitle.innerHTML = "Download Amlo Panel Sekarang!";
-                return;
+                startNewCycle(); // Reset the timer for another 6 hours
+                distance = cycleEndTime - now; // Recalculate distance for the new cycle
             }
-            const days = Math.floor(distance / (1000*60*60*24));
-            const hours = Math.floor((distance % (1000*60*60*24))/(1000*60*60));
-            const minutes = Math.floor((distance % (1000*60*60))/(1000*60));
-            const seconds = Math.floor((distance % (1000*60))/1000);
-            const fmt = num => num<10?'0'+num:num;
-            document.getElementById('days').textContent = fmt(days);
+
+            const hours = Math.floor(distance / (1000 * 60 * 60)); // Total hours remaining in this cycle
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            const fmt = num => num < 10 ? '0' + num : num;
+            
+            // document.getElementById('days').textContent = '00'; // Days are hidden, but if shown, would be 0
             document.getElementById('hours').textContent = fmt(hours);
             document.getElementById('minutes').textContent = fmt(minutes);
             document.getElementById('seconds').textContent = fmt(seconds);
-            buyButton.classList.add('hidden');
-            buyButtonDisabled.classList.remove('hidden');
+
+            // Ensure buy button is active and countdown is visible
+            buyButton.classList.remove('hidden');
+            buyButtonDisabled.classList.add('hidden'); // Keep disabled button hidden
             countdownContainer.classList.remove('hidden');
         }
-        const timerInterval = setInterval(updateTimer,1000);
-        updateTimer();
+
+        startNewCycle(); // Initialize the first cycle
+        const timerInterval = setInterval(updateTimer, 1000);
+        updateTimer(); // Call once to display immediately and set button states
+
 
         // Smooth scrolling desktop
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
