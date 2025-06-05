@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panduan Instalasi Amlo Panel Photoshop (Windows)</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"> {/* Updated Font Awesome */}
+    <style>
+        :root {
+            --accent-glow-start: #00EFFF; /* Electric Blue */
+            --accent-glow-end: #00A5FF;   /* Deep Sky Blue */
+            --accent-solid: #00C6FF;     /* Solid Accent for text/icons */
+
+            --bg-primary: #0D1117;        /* GitHub Dark Dimmed Primary BG */
+            --bg-secondary: #161B22;      /* GitHub Dark Dimmed Secondary BG (Cards) */
+            --bg-tertiary: #21262D;       /* GitHub Dark Dimmed Borders / Subtle BG */
+
+            --text-primary: #e6edf3;      /* Brighter primary text */
+            --text-secondary: #909dab;    /* Softer secondary text */
+            --text-heading: #c9d1d9;
+
+            --border-color: rgba(137, 147, 157, 0.2); /* Softer border */
+            --shadow-color-soft: rgba(0, 0, 0, 0.3);
+            --shadow-color-strong: rgba(0, 0, 0, 0.5);
+            --shadow-accent: rgba(0, 200, 255, 0.15);
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes subtleShine {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.75;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            padding: 1.5rem 0;
+            overflow-x: hidden; /* Prevent horizontal scroll from animations */
+        }
+
+        .container {
+            max-width: 800px; /* Increased max-width */
+            margin: 3rem auto;
+            padding: 3.5rem; /* Increased padding */
+            background-color: var(--bg-secondary);
+            border-radius: 24px; /* Softer, larger radius */
+            box-shadow: 0 20px 50px var(--shadow-color-strong), 0 0 0 1px var(--border-color);
+            border: 1px solid var(--border-color);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        h1, h2 {
+            color: var(--text-heading);
+            font-weight: 800;
+            letter-spacing: -0.03em; /* Slightly tighter for modern feel */
+        }
+
+        h1 {
+            font-size: 2.85rem; /* Responsive font size */
+            text-align: center;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            /* Subtle animated gradient text */
+            background: linear-gradient(90deg, var(--accent-glow-start), var(--accent-glow-end), var(--accent-glow-start));
+            background-size: 200% auto;
+            color: transparent;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: subtleShine 5s linear infinite;
+        }
+         h1 .icon { font-size: 2.5rem; }
+
+
+        h2 {
+            font-size: 1.85rem; /* Responsive font size */
+            margin-top: 3.5rem;
+            margin-bottom: 1.75rem;
+            padding-bottom: 0.75rem;
+            border-bottom: 2px solid var(--bg-tertiary); /* Subtle border */
+            display: flex;
+            align-items: center;
+        }
+        h2 .icon { font-size: 1.5rem; margin-right: 0.85rem; color: var(--accent-solid); }
+
+
+        .intro-text {
+            text-align: center;
+            font-size: 1.1rem;
+            color: var(--text-secondary);
+            margin-bottom: 3rem;
+        }
+        .intro-text strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        .step {
+            background-color: var(--bg-tertiary);
+            padding: 2.25rem; /* Generous padding */
+            border-radius: 16px;
+            margin-bottom: 2.25rem;
+            border: 1px solid var(--border-color);
+            box-shadow: 0 6px 15px var(--shadow-color-soft);
+            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+                        box-shadow 0.3s cubic-bezier(0.25, 0.8, 0.25, 1),
+                        border-color 0.3s ease;
+            position: relative; /* For pseudo-elements if needed */
+            overflow: hidden; /* For potential hover effects */
+        }
+
+        .step:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 12px 25px var(--shadow-color-strong), 0 0 30px var(--shadow-accent);
+            border-color: rgba(0, 198, 255, 0.5);
+        }
+
+        .step-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1.25rem; /* More space */
+        }
+
+        .step-number {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, var(--accent-glow-start), var(--accent-glow-end));
+            color: var(--bg-primary);
+            font-weight: 700; /* Adjusted weight */
+            width: 44px; /* Slightly smaller */
+            height: 44px;
+            border-radius: 12px; /* Squircle shape */
+            margin-right: 1.25rem;
+            font-size: 1.25rem;
+            box-shadow: 0 5px 12px var(--shadow-accent);
+            flex-shrink: 0;
+        }
+
+        .step-title {
+            font-size: 1.25rem; /* Adjusted size */
+            font-weight: 700;
+            color: var(--text-heading);
+        }
+
+        .step-content {
+            color: var(--text-secondary);
+            font-size: 1rem; /* Standard body text size */
+        }
+        .step-content strong {
+            color: var(--accent-solid);
+            font-weight: 600;
+        }
+        .step-content code {
+            background-color: var(--bg-primary);
+            color: var(--accent-solid);
+            padding: 0.4em 0.8em; /* More padding */
+            border-radius: 8px;
+            font-family: 'SF Mono', 'Consolas', 'Menlo', monospace;
+            font-size: 0.9rem;
+            border: 1px solid var(--border-color);
+            display: inline-block;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+        .step-content ul, .step-content ol {
+            margin-top: 1rem;
+            padding-left: 1.25rem; /* Indent lists */
+        }
+        .step-content li {
+            margin-bottom: 0.65rem; /* More spacing between list items */
+            padding-left: 0.5rem;
+        }
+        .step-content li::marker { /* Style list markers */
+            color: var(--accent-solid);
+            font-weight: 600;
+        }
+
+
+        .note, .warning {
+            padding: 1.5rem;
+            margin-top: 1.75rem;
+            margin-bottom: 1.75rem;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            border-width: 1px;
+            border-style: solid;
+        }
+        .note {
+            background-color: rgba(0, 198, 255, 0.05); /* More subtle */
+            border-color: rgba(0, 198, 255, 0.3);
+            color: #aadff0;
+        }
+        .note strong { color: var(--accent-solid); }
+
+        .warning {
+            background-color: rgba(255, 189, 0, 0.05);
+            border-color: rgba(255, 189, 0, 0.4);
+            color: #ffe0b3;
+        }
+        .warning strong { color: #FFBD00; }
+
+        .note .icon, .warning .icon {
+            margin-right: 0.75rem;
+            font-size: 1.1em;
+        }
+
+
+        .footer-text {
+            text-align: center;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--bg-tertiary);
+        }
+        .footer-text a {
+            color: var(--accent-solid);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        .footer-text a:hover {
+            color: var(--accent-glow-start);
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1><i class="fas fa-bolt icon"></i>Instalasi Amlo Panel</h1>
+        <p class="intro-text">Panduan lengkap dan cepat untuk pengguna <strong>Windows</strong>.</p>
+
+        <div class="note">
+           <i class="fas fa-info-circle icon"></i> <strong>Penting:</strong> Pastikan Adobe Photoshop Anda sudah <strong>ditutup sepenuhnya</strong> sebelum memulai. Amlo Panel direkomendasikan untuk Photoshop <strong>CC 2020 ke atas</strong> untuk performa optimal.
+        </div>
+
+        <h2><i class="fas fa-download icon"></i>Langkah 1: Unduh & Jalankan Installer</h2>
+        <div class="step">
+            <div class="step-header">
+                <span class="step-number">1</span>
+                <span class="step-title">Persiapan File Installer</span>
+            </div>
+            <div class="step-content">
+                Dapatkan file installer Amlo Panel (biasanya bernama <code>AmloRetouchInstaller.exe</code>) dari sumber resmi yang Anda percayai.
+                <ul class="mt-4 list-disc space-y-3">
+                    <li>Setelah unduhan selesai, buka folder tempat Anda menyimpan file <code>.exe</code> tersebut.</li>
+                    <li>Klik kanan pada file installer <code>.exe</code> yang telah diunduh.</li>
+                    <li>Dari menu konteks yang muncul, pilih opsi <strong>"Run as administrator"</strong>. Langkah ini sangat penting untuk memberikan izin yang diperlukan agar installer dapat menempatkan semua file panel dengan benar di sistem Anda.</li>
+                    <li>Ikuti setiap instruksi yang ditampilkan pada wizard instalasi. Prosesnya dirancang agar mudah dan cepat, biasanya hanya memerlukan beberapa klik konfirmasi.</li>
+                </ul>
+            </div>
+        </div>
+
+        <h2><i class="fas fa-magic-wand-sparkles icon"></i>Langkah 2: Buka Amlo Panel di Photoshop</h2>
+        <div class="step">
+            <div class="step-header">
+                <span class="step-number">2</span>
+                <span class="step-title">Akses Panel Setelah Instalasi</span>
+            </div>
+            <div class="step-content">
+                Setelah proses instalasi melalui file <code>.exe</code> berhasil dan dikonfirmasi selesai:
+                <ol class="mt-4 list-decimal space-y-3">
+                    <li>Buka aplikasi Adobe Photoshop Anda. Jika Photoshop sedang berjalan selama proses instalasi, sangat disarankan untuk <strong>menutup dan membukanya kembali</strong> (restart Photoshop) untuk memastikan panel terinisialisasi dengan benar.</li>
+                    <li>Untuk menampilkan Amlo Panel, navigasikan ke menu bar Photoshop di bagian atas layar aplikasi:
+                        <br>Pilih <code>Window</code> &rarr; kemudian <code>Extensions</code> (atau <code>Ekstensi</code> dalam Bahasa Indonesia) &rarr; lalu klik pada <code>Amlo Panel</code> (atau nama panel yang sesuai yang tertera dalam daftar).
+                    </li>
+                    <li>Selesai! Amlo Panel akan muncul sebagai jendela panel di area kerja Photoshop Anda, siap digunakan untuk mempercepat alur kerja retouching Anda.</li>
+                </ol>
+            </div>
+        </div>
+
+        <h2><i class="fas fa-headset icon"></i>Bantuan & Troubleshooting</h2>
+        <div class="step">
+             <div class="step-header">
+                <span class="step-number"><i class="fas fa-wrench text-xl"></i></span>
+                <span class="step-title">Mengatasi Kendala Umum</span>
+            </div>
+            <div class="step-content">
+                 Jika Amlo Panel tidak muncul di menu Extensions setelah instalasi:
+                <ul class="mt-4 list-disc space-y-3">
+                    <li><strong>Pastikan Hak Administrator:</strong> Ulangi proses instalasi dan pastikan Anda telah menjalankan file installer dengan opsi <strong>"Run as administrator"</strong>.</li>
+                    <li><strong>Restart Photoshop & Komputer:</strong> Langkah klasik yang sering berhasil. Tutup Photoshop, restart komputer Anda, lalu buka kembali Photoshop.</li>
+                    <li><strong>Kompatibilitas Versi Photoshop:</strong> Pastikan versi Adobe Photoshop Anda adalah CC 2020 atau yang lebih baru, sesuai dengan rekomendasi Amlo Panel.</li>
+                    <li><strong>Interferensi Program Keamanan:</strong> Dalam kasus yang sangat jarang, program antivirus atau firewall mungkin keliru mengidentifikasi installer. Coba nonaktifkan sementara program keamanan Anda selama proses instalasi (dan aktifkan kembali segera setelahnya).</li>
+                    <li><strong>Periksa Folder Instalasi (Lanjutan):</strong> Jika semua gagal, Anda bisa secara manual memeriksa apakah folder panel ada di <code>C:\Program Files (x86)\Common Files\Adobe\CEP\extensions\</code>. Namun, installer seharusnya menangani ini secara otomatis.</li>
+                </ul>
+            </div>
+        </div>
+
+        <p class="footer-text">
+            Semoga panduan ini membuat proses instalasi Amlo Panel menjadi mudah dan lancar. Selamat menikmati kemudahan retouching! Jika kendala berlanjut, silakan kunjungi situs resmi Amlo Panel untuk video tutorial atau opsi dukungan.
+            <br>
+            Untuk pertanyaan lebih lanjut, hubungi kami di: <a href="mailto:amlolife.contact@gmail.com">amlolife.contact@gmail.com</a>
+        </p>
+    </div>
+
+</body>
+</html>
