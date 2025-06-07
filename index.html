@@ -20,7 +20,6 @@
             --text-primary: #e0e0e0;
             --text-secondary: #888888;
             --text-accent: #ffffff;
-            --success-color: #2dd4bf; 
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -33,7 +32,8 @@
             justify-content: center;
             min-height: 100vh;
             padding: 1.5rem;
-            overflow: hidden;
+            /* SCROLL FIX: Changed overflow:hidden to overflow-x:hidden */
+            overflow-x: hidden;
         }
         body::before {
             content: "";
@@ -116,7 +116,7 @@
     <div class="blur-blob-2"></div>
 
     <div class="glass-card p-6 md:p-8 max-w-lg md:max-w-xl w-full text-center">
-        <p class="value-pill mb-4 animate-pulse">HEMAT Rp 200.000 (DISKON 67%!) + BONUS</p>
+        <p class="value-pill mb-4 animate-pulse">HEMAT Rp 200.000 (DISKON 67%!) </p>
 
         <a href="#" class="text-4xl font-bold tracking-tighter mb-1 inline-block" style="color: var(--accent-color);">
             Amlo<span class="font-light text-primary">Panel</span>
@@ -135,7 +135,7 @@
                  <span class="text-gray-400 text-2xl line-through">Rp 299.000</span>
                  <span class="text-4xl md:text-5xl font-extrabold" style="color: var(--accent-color);">Rp 99.000</span>
             </div>
-            <div id="countdown-timer" class="text-sm font-semibold text-yellow-300 animate-pulse">Penawaran Berakhir Dalam: 12j 34m 56d</div>
+            <div id="countdown-timer" class="text-sm font-semibold text-yellow-300 animate-pulse">Penawaran Berakhir Dalam: 00j 00m 00d</div>
         </div>
 
         <a href="https://amlo-life.myr.id/pl/amlo-panel" class="btn-primary w-full text-lg py-4 mb-4">
@@ -147,8 +147,8 @@
             <p class="font-bold text-white mb-2">Yang Akan Anda Dapatkan:</p>
             <ul class="space-y-1">
                 <li class="flex items-center"><ion-icon name="checkmark-circle-outline" class="mr-2 text-green-400"></ion-icon>Amlo Panel Pro (Senilai Rp 299rb)</li>
-                <li class="flex items-center"><ion-icon name="checkmark-circle-outline" class="mr-2 text-green-400"></ion-icon><span class="bg-yellow-400 text-black text-xs font-bold mr-2 px-1 rounded">BONUS</span> Preset Warna Eksklusif (Senilai Rp 150rb)</li>
-                <li class="flex items-center"><ion-icon name="checkmark-circle-outline" class="mr-2 text-green-400"></ion-icon>Akses Grup & Update Selamanya</li>
+                <li class="flex items-center"><ion-icon name="checkmark-circle-outline" class="mr-2 text-green-400"></ion-icon>Tutorial Pemakaian Lengkap</li>
+                <li class="flex items-center"><ion-icon name="checkmark-circle-outline" class="mr-2 text-green-400"></ion-icon>Update Selamanya</li>
             </ul>
         </div>
         
@@ -166,24 +166,27 @@
     <script>
         document.getElementById('currentYear').textContent = new Date().getFullYear();
 
-        // Simple Countdown Timer Script
         const countdownElement = document.getElementById('countdown-timer');
         
-        // Set countdown to end at midnight
-        let now = new Date();
-        let endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
-        let duration = endOfDay - now;
+        const updateCountdown = () => {
+            let now = new Date();
+            // Set countdown to end at midnight of the CURRENT day
+            let endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
+            let duration = endOfDay - now;
 
-        setInterval(() => {
-            duration -= 1000;
             if (duration < 0) duration = 0;
 
-            let hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
-            let minutes = Math.floor((duration / 1000 / 60) % 60);
+            let hours = Math.floor(duration / (1000 * 60 * 60));
+            let minutes = Math.floor((duration / (1000 * 60)) % 60);
             let seconds = Math.floor((duration / 1000) % 60);
             
             countdownElement.textContent = `Penawaran Berakhir Dalam: ${String(hours).padStart(2, '0')}j ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}d`;
-        }, 1000);
+        };
+
+        // Run once immediately on load
+        updateCountdown();
+        // Then update every second
+        setInterval(updateCountdown, 1000);
     </script>
 </body>
 </html>
