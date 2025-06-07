@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Amlo Panel - Penawaran Waktu Terbatas!</title>
-    <meta name="description" content="[HAMPIR HABIS] Penawaran Spesial! Dapatkan Amlo Panel hanya dengan Rp 99.000 (dari Rp 299.000) + Bonus. Plugin Photoshop untuk retouching instan.">
+    <meta name="description" content="[Penawaran Terbatas] Dapatkan akses ke Amlo Panel, plugin Photoshop profesional untuk retouching cepat & efisien.">
     <link rel="icon" href="/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -32,7 +32,6 @@
             justify-content: center;
             min-height: 100vh;
             padding: 1.5rem;
-            /* SCROLL FIX: Changed overflow:hidden to overflow-x:hidden */
             overflow-x: hidden;
         }
         body::before {
@@ -70,7 +69,7 @@
             color: #000;
             padding: .75rem 1.5rem;
             border-radius: 8px;
-            font-weight: 800; /* Bolder */
+            font-weight: 800;
             transition: all .2s ease-in-out;
             border: 1px solid var(--accent-color);
             box-shadow: 0 4px 15px rgba(0, 201, 255, .2);
@@ -98,7 +97,7 @@
         }
         .value-pill {
             display: inline-block;
-            background-color: #E60000; /* Bright red for urgency */
+            background-color: #E60000;
             color: white;
             padding: 0.25rem 0.75rem;
             border-radius: 9999px;
@@ -116,7 +115,7 @@
     <div class="blur-blob-2"></div>
 
     <div class="glass-card p-6 md:p-8 max-w-lg md:max-w-xl w-full text-center">
-        <p class="value-pill mb-4 animate-pulse">HEMAT Rp 200.000 (DISKON 67%!) </p>
+        <p class="value-pill mb-4 animate-pulse">PENAWARAN WAKTU TERBATAS</p>
 
         <a href="#" class="text-4xl font-bold tracking-tighter mb-1 inline-block" style="color: var(--accent-color);">
             Amlo<span class="font-light text-primary">Panel</span>
@@ -129,24 +128,20 @@
             <img src="https://i.imgur.com/x5CEecD.jpeg" alt="Amlo Panel Preview" class="object-cover w-full h-full shadow-lg">
         </div>
         
-        <div class="mb-6 p-4 rounded-lg border" style="border-color: var(--accent-color-dark); background-color: rgba(0, 201, 255, 0.05);">
-            <h3 class="text-lg font-bold text-white mb-2">PENAWARAN WAKTU TERBATAS</h3>
-            <div class="flex items-center justify-center gap-3 my-2">
-                 <span class="text-gray-400 text-2xl line-through">Rp 299.000</span>
-                 <span class="text-4xl md:text-5xl font-extrabold" style="color: var(--accent-color);">Rp 99.000</span>
-            </div>
-            <div id="countdown-timer" class="text-sm font-semibold text-yellow-300 animate-pulse">Penawaran Berakhir Dalam: 00j 00m 00d</div>
+        <div class="mb-6 p-4 rounded-lg" style="background-color: rgba(0, 201, 255, 0.05);">
+            <h3 class="text-lg font-bold text-white mb-2">Akses Terbatas Akan Segera Ditutup</h3>
+            <div id="countdown-timer" class="text-lg font-semibold text-yellow-300 animate-pulse">Penawaran Berakhir Dalam: 00j 00m 00d</div>
         </div>
 
         <a href="https://amlo-life.myr.id/pl/amlo-panel" class="btn-primary w-full text-lg py-4 mb-4">
-            <ion-icon name="flash-outline" class="mr-2 text-xl"></ion-icon>
-            Klaim Diskon 67% Sekarang!
+            <ion-icon name="lock-open-outline" class="mr-2 text-xl"></ion-icon>
+            Dapatkan Akses Sekarang!
         </a>
         
         <div class="text-left text-sm text-gray-300 bg-gray-800/50 p-3 rounded-md mb-6">
             <p class="font-bold text-white mb-2">Yang Akan Anda Dapatkan:</p>
             <ul class="space-y-1">
-                <li class="flex items-center"><ion-icon name="checkmark-circle-outline" class="mr-2 text-green-400"></ion-icon>Amlo Panel Pro (Senilai Rp 299rb)</li>
+                <li class="flex items-center"><ion-icon name="checkmark-circle-outline" class="mr-2 text-green-400"></ion-icon>Amlo Panel Pro</li>
                 <li class="flex items-center"><ion-icon name="checkmark-circle-outline" class="mr-2 text-green-400"></ion-icon>Tutorial Pemakaian Lengkap</li>
                 <li class="flex items-center"><ion-icon name="checkmark-circle-outline" class="mr-2 text-green-400"></ion-icon>Update Selamanya</li>
             </ul>
@@ -170,7 +165,6 @@
         
         const updateCountdown = () => {
             let now = new Date();
-            // Set countdown to end at midnight of the CURRENT day
             let endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
             let duration = endOfDay - now;
 
@@ -183,9 +177,7 @@
             countdownElement.textContent = `Penawaran Berakhir Dalam: ${String(hours).padStart(2, '0')}j ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}d`;
         };
 
-        // Run once immediately on load
         updateCountdown();
-        // Then update every second
         setInterval(updateCountdown, 1000);
     </script>
 </body>
