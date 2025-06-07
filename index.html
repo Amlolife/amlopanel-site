@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amlo Panel - Penawaran Terbatas Idul Adha!</title>
-    <meta name="description" content="[HAMPIR HABIS] Penawaran Idul Adha! Dapatkan Amlo Panel hanya dengan Rp 99.000 (dari Rp 299.000) + Bonus. Plugin Photoshop untuk retouching instan.">
+    <title>Amlo Panel - Penawaran Waktu Terbatas!</title>
+    <meta name="description" content="[HAMPIR HABIS] Penawaran Spesial! Dapatkan Amlo Panel hanya dengan Rp 99.000 (dari Rp 299.000) + Bonus. Plugin Photoshop untuk retouching instan.">
     <link rel="icon" href="/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -20,7 +20,7 @@
             --text-primary: #e0e0e0;
             --text-secondary: #888888;
             --text-accent: #ffffff;
-            --success-color: #2dd4bf; /* Teal for guarantee */
+            --success-color: #2dd4bf; 
         }
         body {
             font-family: 'Inter', sans-serif;
@@ -130,7 +130,7 @@
         </div>
         
         <div class="mb-6 p-4 rounded-lg border" style="border-color: var(--accent-color-dark); background-color: rgba(0, 201, 255, 0.05);">
-            <h3 class="text-lg font-bold text-white mb-2">HARGA SPESIAL IDUL ADHA</h3>
+            <h3 class="text-lg font-bold text-white mb-2">PENAWARAN WAKTU TERBATAS</h3>
             <div class="flex items-center justify-center gap-3 my-2">
                  <span class="text-gray-400 text-2xl line-through">Rp 299.000</span>
                  <span class="text-4xl md:text-5xl font-extrabold" style="color: var(--accent-color);">Rp 99.000</span>
@@ -168,23 +168,19 @@
 
         // Simple Countdown Timer Script
         const countdownElement = document.getElementById('countdown-timer');
-        let hours = 12;
-        let minutes = 34;
-        let seconds = 56;
+        
+        // Set countdown to end at midnight
+        let now = new Date();
+        let endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
+        let duration = endOfDay - now;
 
         setInterval(() => {
-            seconds--;
-            if (seconds < 0) {
-                seconds = 59;
-                minutes--;
-            }
-            if (minutes < 0) {
-                minutes = 59;
-                hours--;
-            }
-            if (hours < 0) {
-                hours = 0; minutes = 0; seconds = 0;
-            }
+            duration -= 1000;
+            if (duration < 0) duration = 0;
+
+            let hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
+            let minutes = Math.floor((duration / 1000 / 60) % 60);
+            let seconds = Math.floor((duration / 1000) % 60);
             
             countdownElement.textContent = `Penawaran Berakhir Dalam: ${String(hours).padStart(2, '0')}j ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}d`;
         }, 1000);
