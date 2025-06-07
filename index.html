@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amlo Panel - Penawaran Waktu Terbatas!</title>
-    <meta name="description" content="[Penawaran Terbatas] Dapatkan akses ke Amlo Panel, plugin Photoshop profesional untuk retouching cepat & efisien.">
+    <title>Amlo Panel - Plugin Photoshop Profesional</title>
+    <meta name="description" content="Dapatkan akses ke Amlo Panel, plugin Photoshop profesional untuk retouching cepat & efisien.">
     <link rel="icon" href="/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -95,18 +95,6 @@
             color: var(--text-secondary);
             font-size: 0.875rem;
         }
-        .value-pill {
-            display: inline-block;
-            background-color: #E60000;
-            color: white;
-            padding: 0.25rem 0.75rem;
-            border-radius: 9999px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            letter-spacing: 0.5px;
-            text-transform: uppercase;
-            box-shadow: 0 0 15px rgba(255, 0, 0, 0.4);
-        }
         html { scroll-behavior: smooth; }
     </style>
 </head>
@@ -115,9 +103,8 @@
     <div class="blur-blob-2"></div>
 
     <div class="glass-card p-6 md:p-8 max-w-lg md:max-w-xl w-full text-center">
-        <p class="value-pill mb-4 animate-pulse">PENAWARAN WAKTU TERBATAS</p>
-
-        <a href="#" class="text-4xl font-bold tracking-tighter mb-1 inline-block" style="color: var(--accent-color);">
+        
+        <a href="#" class="text-4xl font-bold tracking-tighter mb-1 mt-4 inline-block" style="color: var(--accent-color);">
             Amlo<span class="font-light text-primary">Panel</span>
         </a>
         <p class="text-md text-secondary mb-6">
@@ -165,6 +152,7 @@
         
         const updateCountdown = () => {
             let now = new Date();
+            // Sets the countdown to end at midnight of the current day in the user's local timezone.
             let endOfDay = new Date(now.getFullYear(), now.getMonth(), now.getDate() + 1, 0, 0, 0);
             let duration = endOfDay - now;
 
