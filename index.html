@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amlo Panel - Plugin Photoshop Profesional</title>
-    <meta name="description" content="Dapatkan akses ke Amlo Panel, plugin Photoshop profesional untuk retouching cepat & efisien.">
+    <title>Amlo Panel - Plugin Retouching Instan untuk Photoshop</title>
+    <meta name="description" content="Hemat waktu dan hasilkan foto profesional dengan Amlo Panel. Plugin Photoshop untuk retouching wajah, mencerahkan kulit, dan menghapus jerawat secara instan.">
     <link rel="icon" href="/favicon.png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
@@ -31,7 +31,7 @@
             align-items: center;
             justify-content: center;
             min-height: 100vh;
-            padding: 1.5rem;
+            padding: 2rem 1.5rem;
             overflow-x: hidden;
         }
         body::before {
@@ -83,7 +83,6 @@
             transform: translateY(-3px) scale(1.02);
             box-shadow: 0 8px 25px rgba(0, 201, 255, .35);
         }
-        /* NEW SECONDARY BUTTON STYLE */
         .btn-secondary {
             background-color: transparent;
             border: 1px solid var(--accent-color);
@@ -103,15 +102,32 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 15px rgba(0, 201, 255, .1);
         }
-        .image-placeholder {
-            background-color: var(--bg-secondary);
+        .content-section {
+            text-align: left;
+            padding: 1rem 1.25rem;
+            background-color: rgba(10, 10, 10, 0.4);
+            border-radius: 12px;
+            margin-top: 1.5rem;
             border: 1px solid var(--border-line);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-secondary);
-            font-size: 0.875rem;
+        }
+        .content-section h3 {
+            font-size: 1.125rem;
+            font-weight: 700;
+            color: var(--accent-color);
+            margin-bottom: 0.75rem;
+        }
+        .content-section p, .content-section li {
+            color: var(--text-primary);
+            line-height: 1.6;
+        }
+        .content-section ul {
+            list-style-type: none;
+            padding-left: 0;
+            space-y: 0.5rem;
+        }
+         .content-section li .icon {
+            color: var(--accent-color);
+            margin-right: 0.75rem;
         }
         html { scroll-behavior: smooth; }
     </style>
@@ -120,30 +136,89 @@
     <div class="blur-blob-1"></div>
     <div class="blur-blob-2"></div>
 
-    <div class="glass-card p-6 md:p-8 max-w-lg md:max-w-xl w-full text-center">
+    <div class="glass-card p-6 md:p-8 max-w-lg md:max-w-xl w-full">
         
-        <a href="#" class="text-4xl font-bold tracking-tighter mb-1 mt-4 inline-block" style="color: var(--accent-color);">
-            Amlo<span class="font-light text-primary">Panel</span>
-        </a>
-        <p class="text-md text-secondary mb-6">
-            Plugin Photoshop Profesional untuk Retouching Cepat & Efisien.
-        </p>
+        <div class="text-center">
+            <a href="#" class="text-4xl font-bold tracking-tighter mb-1 mt-4 inline-block" style="color: var(--accent-color);">
+                Amlo<span class="font-light text-primary">Panel</span>
+            </a>
+            <p class="text-md text-secondary mb-6">
+                Panel Retouching Instan untuk Photoshop Buatan Lokal 🇮🇩
+            </p>
 
-        <div class="image-placeholder h-48 sm:h-64 md:h-72 mb-6 overflow-hidden rounded-lg">
-            <img src="https://i.imgur.com/x5CEecD.jpeg" alt="Amlo Panel Preview" class="object-cover w-full h-full shadow-lg">
-        </div>
-        
-        <div class="mb-6 p-4 rounded-lg" style="background-color: rgba(0, 201, 255, 0.05);">
-            <h3 class="text-lg font-bold text-white mb-2">Akses Terbatas Akan Segera Ditutup</h3>
-            <div id="countdown-timer" class="text-lg font-semibold text-yellow-300 animate-pulse">Penawaran Berakhir Dalam: 00j 00m 00d</div>
+            <div class="h-48 sm:h-64 md:h-72 mb-6 overflow-hidden rounded-lg border border-[var(--border-line)]">
+                <img src="https://i.imgur.com/x5CEecD.jpeg" alt="Amlo Panel Preview" class="object-cover w-full h-full shadow-lg">
+            </div>
         </div>
 
-        <a href="https://amlo-life.myr.id/pl/amlo-panel" class="btn-primary w-full text-lg py-4">
-            <ion-icon name="lock-open-outline" class="mr-2 text-xl"></ion-icon>
+        <div class="content-section text-center">
+            <p class="text-gray-300 italic">"Berawal dari keresahan saya sebagai fotografer, yang tiap hari buang waktu buat edit jerawat, cerahin kulit, sampai tambal lipstik satu per satu… Sekarang cukup klik tombolnya aja, semua selesai dalam hitungan detik!"</p>
+        </div>
+        
+        <div class="content-section">
+            <h3 class="!text-white">Mulai sekarang…</h3>
+            <ul class="space-y-2">
+                <li class="flex items-start"><ion-icon name="close-circle-outline" class="icon text-red-400"></ion-icon>Gak perlu lagi ribet retouch manual berjam-jam.</li>
+                <li class="flex items-start"><ion-icon name="close-circle-outline" class="icon text-red-400"></ion-icon>Gak perlu lagi buka-buka action Photoshop satu per satu.</li>
+                <li class="flex items-start"><ion-icon name="close-circle-outline" class="icon text-red-400"></ion-icon>Gak perlu lagi pakai plugin luar negeri yang berat & mahal.</li>
+            </ul>
+        </div>
+        
+        <div class="content-section">
+            <h3>✨ Amlo Panel Bisa Bantu Apa?</h3>
+            <ul class="space-y-2">
+                <li class="flex items-center"><ion-icon name="checkmark-outline" class="icon"></ion-icon>Retouch Wajah Instan</li>
+                <li class="flex items-center"><ion-icon name="checkmark-outline" class="icon"></ion-icon>Mencerahkan Kulit & Meratakan Tone</li>
+                <li class="flex items-center"><ion-icon name="checkmark-outline" class="icon"></ion-icon>Menghapus Jerawat & Minyak Berlebih</li>
+                <li class="flex items-center"><ion-icon name="checkmark-outline" class="icon"></ion-icon>Whitening Gigi, Tambah Lipstik, & banyak lagi</li>
+                <li class="flex items-center"><ion-icon name="checkmark-outline" class="icon"></ion-icon>Import Foto Stok Gratis langsung ke Photoshop!</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>🤝 Cocok Banget Buat:</h3>
+            <ul class="space-y-2">
+                <li class="flex items-center"><ion-icon name="camera-outline" class="icon"></ion-icon>Fotografer Wedding & Studio</li>
+                <li class="flex items-center"><ion-icon name="sparkles-outline" class="icon"></ion-icon>Makeup Artist & Retoucher</li>
+                <li class="flex items-center"><ion-icon name="color-palette-outline" class="icon"></ion-icon>Desainer Grafis & Konten Kreator</li>
+            </ul>
+        </div>
+
+        <div class="content-section">
+            <h3>🎁 Yang Kamu Dapetin:</h3>
+            <ul class="space-y-2">
+                <li class="flex items-center"><ion-icon name="keypad-outline" class="icon"></ion-icon>7+ Fitur Retouching Otomatis</li>
+                <li class="flex items-center"><ion-icon name="extension-puzzle-outline" class="icon"></ion-icon>Panel Langsung Tersedia di Photoshop</li>
+                <li class="flex items-center"><ion-icon name="leaf-outline" class="icon"></ion-icon>Desain Minimalis & Mudah Digunakan</li>
+                <li class="flex items-center"><ion-icon name="lock-open-outline" class="icon"></ion-icon>Sekali Beli, Akses Selamanya</li>
+                <li class="flex items-center"><ion-icon name="cloud-upload-outline" class="icon"></ion-icon>Gratis Update Fitur Selamanya!</li>
+            </ul>
+            <p class="text-xs text-center mt-4 p-2 rounded-md bg-gray-900/50">💻 <span class="font-bold">Kompatibilitas:</span> Windows Only</p>
+        </div>
+        
+        <div class="mt-6 p-5 rounded-lg text-center" style="background-color: rgba(0, 201, 255, 0.05); border: 1px solid rgba(0, 201, 255, 0.2);">
+             <h3 class="text-lg font-bold text-white mb-2">Mahal Gak? Dapatkan Harga Spesial!</h3>
+             <p class="text-xl text-gray-400 line-through">Harga Normal: Rp 499.000</p>
+             <p class="text-4xl font-extrabold my-2" style="color: var(--accent-color);">Cukup Rp 99.000</p>
+             <div id="countdown-timer" class="text-md font-semibold text-yellow-300 animate-pulse">Penawaran Berakhir Dalam: 00j 00m 00d</div>
+             <p class="text-sm font-bold text-white mt-3 animate-pulse">Tapi cepet ya, kuota terbatas! 🔥</p>
+        </div>
+
+        <a href="https://amlo-life.myr.id/pl/amlo-panel" class="btn-primary w-full text-lg py-4 mt-6">
+            <ion-icon name="flash-outline" class="mr-2 text-xl"></ion-icon>
             Dapatkan Akses Sekarang!
         </a>
-        
-        <div class="flex flex-col sm:flex-row justify-center items-center gap-3 mt-4">
+
+        <div class="content-section mt-4">
+            <h3 class="!text-white text-center">Cara Order (Gak Sampai 1 Menit!)</h3>
+            <ol class="list-decimal list-inside space-y-2 text-center">
+                <li><span class="font-bold">Langkah 1:</span> Isi formulir (Nama, WA, Email).</li>
+                <li><span class="font-bold">Langkah 2:</span> Bayar (Bisa via QRIS & metode lain).</li>
+                <li><span class="font-bold">Langkah 3:</span> Akses produk langsung dikirim!</li>
+            </ol>
+        </div>
+
+        <div class="flex flex-col sm:flex-row justify-center items-center gap-3 mt-6">
             <a href="Tutorial.html" class="btn-secondary w-full sm:w-auto">
                 <ion-icon name="play-circle-outline" class="mr-2 text-lg"></ion-icon>
                 Video Tutorial
@@ -153,18 +228,9 @@
                 Cara Install
             </a>
         </div>
-
-        <div class="text-left text-sm text-gray-300 bg-gray-800/50 p-3 rounded-md mt-6 mb-6">
-            <p class="font-bold text-white mb-2">Yang Akan Anda Dapatkan:</p>
-            <ul class="space-y-1">
-                <li class="flex items-center"><ion-icon name="checkmark-circle-outline" class="mr-2 text-green-400"></ion-icon>Amlo Panel Pro</li>
-                <li class="flex items-center"><ion-icon name="checkmark-circle-outline" class="mr-2 text-green-400"></ion-icon>Tutorial Pemakaian Lengkap</li>
-                <li class="flex items-center"><ion-icon name="checkmark-circle-outline" class="mr-2 text-green-400"></ion-icon>Update Selamanya</li>
-            </ul>
-        </div>
         
-        <p class="text-xs text-secondary mt-8">
-            © <span id="currentYear"></span> Amlо Panel - amlo.life
+        <p class="text-xs text-secondary mt-8 text-center">
+             © <span id="currentYear"></span> Amlо Panel - amlo.life
         </p>
     </div>
 
