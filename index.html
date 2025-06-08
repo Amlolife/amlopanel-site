@@ -266,15 +266,18 @@
         setInterval(updateCountdown, 1000);
 </script>
     <script type="module">
-  import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0/dist/web.js'
+        import Typebot from 'https://cdn.jsdelivr.net/npm/@typebot.io/js@0/dist/web.js'
 
-  Typebot.initBubble({
-    typebot: "open-ai-assistant-chat-02frkvm",
-    theme: {
-      button: { backgroundColor: "#0042DA" },
-      chatWindow: { backgroundColor: "#171923" },
-    },
-  });
-</script>
+        Typebot.initBubble({
+            typebot: "open-ai-assistant-chat-02frkvm",
+            theme: {
+                button: { 
+                    backgroundColor: "#00C9FF",
+                    customIcon: { text: "Tanya Admin" }
+                },
+                chatWindow: { backgroundColor: "#171923" },
+            },
+        });
+    </script>
 </body>
 </html>
